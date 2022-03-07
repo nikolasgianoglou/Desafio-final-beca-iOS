@@ -16,6 +16,16 @@
 		F8B9429F27D62D2900DC63A2 /* MasterCoinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9429E27D62D2900DC63A2 /* MasterCoinUITestsLaunchTests.swift */; };
 		F8B942BD27D6373700DC63A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942BC27D6373700DC63A2 /* Coordinator.swift */; };
 		F8B942BF27D6384D00DC63A2 /* ListCoinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942BE27D6384D00DC63A2 /* ListCoinCoordinator.swift */; };
+		F8B942C127D640A500DC63A2 /* File1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942C027D640A500DC63A2 /* File1.swift */; };
+		F8B942C327D640BD00DC63A2 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942C227D640BD00DC63A2 /* BaseManager.swift */; };
+		F8B942C527D640C900DC63A2 /* File2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942C427D640C900DC63A2 /* File2.swift */; };
+		F8B942C727D640D400DC63A2 /* File3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942C627D640D400DC63A2 /* File3.swift */; };
+		F8B942C927D640DF00DC63A2 /* File4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942C827D640DF00DC63A2 /* File4.swift */; };
+		F8B942CB27D640E800DC63A2 /* File5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942CA27D640E800DC63A2 /* File5.swift */; };
+		F8B942CD27D640F200DC63A2 /* File6.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942CC27D640F200DC63A2 /* File6.swift */; };
+		F8B942CF27D640FB00DC63A2 /* File7.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942CE27D640FB00DC63A2 /* File7.swift */; };
+		F8B942D127D6410600DC63A2 /* File8.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942D027D6410600DC63A2 /* File8.swift */; };
+		F8B942D327D6411200DC63A2 /* File10.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942D227D6411200DC63A2 /* File10.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		F8B9429E27D62D2900DC63A2 /* MasterCoinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCoinUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F8B942BC27D6373700DC63A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F8B942BE27D6384D00DC63A2 /* ListCoinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinCoordinator.swift; sourceTree = "<group>"; };
+		F8B942C027D640A500DC63A2 /* File1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File1.swift; sourceTree = "<group>"; };
+		F8B942C227D640BD00DC63A2 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
+		F8B942C427D640C900DC63A2 /* File2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File2.swift; sourceTree = "<group>"; };
+		F8B942C627D640D400DC63A2 /* File3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File3.swift; sourceTree = "<group>"; };
+		F8B942C827D640DF00DC63A2 /* File4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File4.swift; sourceTree = "<group>"; };
+		F8B942CA27D640E800DC63A2 /* File5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File5.swift; sourceTree = "<group>"; };
+		F8B942CC27D640F200DC63A2 /* File6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File6.swift; sourceTree = "<group>"; };
+		F8B942CE27D640FB00DC63A2 /* File7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File7.swift; sourceTree = "<group>"; };
+		F8B942D027D6410600DC63A2 /* File8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File8.swift; sourceTree = "<group>"; };
+		F8B942D227D6411200DC63A2 /* File10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File10.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */,
-				F8B9427F27D62D2700DC63A2 /* ListCoinViewController.swift */,
 				F8B9428427D62D2900DC63A2 /* Assets.xcassets */,
 				F8B942AC27D6359700DC63A2 /* Storyboard */,
 			);
@@ -167,6 +186,7 @@
 		F8B942AF27D635F900DC63A2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942C227D640BD00DC63A2 /* BaseManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -174,6 +194,7 @@
 		F8B942B027D6360800DC63A2 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942C027D640A500DC63A2 /* File1.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -181,6 +202,7 @@
 		F8B942B127D6361C00DC63A2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942D227D6411200DC63A2 /* File10.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -188,6 +210,7 @@
 		F8B942B227D6362A00DC63A2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942D027D6410600DC63A2 /* File8.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +240,7 @@
 		F8B942B527D6367400DC63A2 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942CE27D640FB00DC63A2 /* File7.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -224,6 +248,7 @@
 		F8B942B627D6367B00DC63A2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942CC27D640F200DC63A2 /* File6.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -231,6 +256,7 @@
 		F8B942B727D6368800DC63A2 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942CA27D640E800DC63A2 /* File5.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -238,6 +264,7 @@
 		F8B942B827D6369900DC63A2 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942C827D640DF00DC63A2 /* File4.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -245,6 +272,7 @@
 		F8B942B927D636A000DC63A2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942C627D640D400DC63A2 /* File3.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +280,7 @@
 		F8B942BA27D636B200DC63A2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F8B942C427D640C900DC63A2 /* File2.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -259,6 +288,7 @@
 		F8B942BB27D636D100DC63A2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F8B9427F27D62D2700DC63A2 /* ListCoinViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -393,10 +423,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B942C327D640BD00DC63A2 /* BaseManager.swift in Sources */,
+				F8B942CF27D640FB00DC63A2 /* File7.swift in Sources */,
+				F8B942D327D6411200DC63A2 /* File10.swift in Sources */,
+				F8B942C727D640D400DC63A2 /* File3.swift in Sources */,
 				F8B9428027D62D2700DC63A2 /* ListCoinViewController.swift in Sources */,
 				F8B942BF27D6384D00DC63A2 /* ListCoinCoordinator.swift in Sources */,
+				F8B942C527D640C900DC63A2 /* File2.swift in Sources */,
+				F8B942CD27D640F200DC63A2 /* File6.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,
+				F8B942C127D640A500DC63A2 /* File1.swift in Sources */,
+				F8B942CB27D640E800DC63A2 /* File5.swift in Sources */,
+				F8B942C927D640DF00DC63A2 /* File4.swift in Sources */,
 				F8B942BD27D6373700DC63A2 /* Coordinator.swift in Sources */,
+				F8B942D127D6410600DC63A2 /* File8.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
