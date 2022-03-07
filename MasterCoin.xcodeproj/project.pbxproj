@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */; };
-		F8B9428027D62D2700DC63A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9427F27D62D2700DC63A2 /* ViewController.swift */; };
+		F8B9428027D62D2700DC63A2 /* ListCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9427F27D62D2700DC63A2 /* ListCoinViewController.swift */; };
 		F8B9428527D62D2900DC63A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B9428427D62D2900DC63A2 /* Assets.xcassets */; };
 		F8B9428827D62D2900DC63A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B9428627D62D2900DC63A2 /* LaunchScreen.storyboard */; };
 		F8B9429327D62D2900DC63A2 /* MasterCoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9429227D62D2900DC63A2 /* MasterCoinTests.swift */; };
 		F8B9429D27D62D2900DC63A2 /* MasterCoinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9429C27D62D2900DC63A2 /* MasterCoinUITests.swift */; };
 		F8B9429F27D62D2900DC63A2 /* MasterCoinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9429E27D62D2900DC63A2 /* MasterCoinUITestsLaunchTests.swift */; };
+		F8B942BD27D6373700DC63A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942BC27D6373700DC63A2 /* Coordinator.swift */; };
+		F8B942BF27D6384D00DC63A2 /* ListCoinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B942BE27D6384D00DC63A2 /* ListCoinCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		F8B9427827D62D2700DC63A2 /* MasterCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8B9427F27D62D2700DC63A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8B9427F27D62D2700DC63A2 /* ListCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinViewController.swift; sourceTree = "<group>"; };
 		F8B9428427D62D2900DC63A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B9428727D62D2900DC63A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B9428927D62D2900DC63A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		F8B9429827D62D2900DC63A2 /* MasterCoinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterCoinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B9429C27D62D2900DC63A2 /* MasterCoinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCoinUITests.swift; sourceTree = "<group>"; };
 		F8B9429E27D62D2900DC63A2 /* MasterCoinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCoinUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8B942BC27D6373700DC63A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F8B942BE27D6384D00DC63A2 /* ListCoinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +99,9 @@
 		F8B9427A27D62D2700DC63A2 /* MasterCoin */ = {
 			isa = PBXGroup;
 			children = (
-				F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */,
-				F8B9427F27D62D2700DC63A2 /* ViewController.swift */,
-				F8B9428427D62D2900DC63A2 /* Assets.xcassets */,
-				F8B9428627D62D2900DC63A2 /* LaunchScreen.storyboard */,
 				F8B9428927D62D2900DC63A2 /* Info.plist */,
+				F8B942AB27D6357400DC63A2 /* Resource */,
+				F8B942AD27D635BE00DC63A2 /* Source */,
 			);
 			path = MasterCoin;
 			sourceTree = "<group>";
@@ -119,6 +121,146 @@
 				F8B9429E27D62D2900DC63A2 /* MasterCoinUITestsLaunchTests.swift */,
 			);
 			path = MasterCoinUITests;
+			sourceTree = "<group>";
+		};
+		F8B942AB27D6357400DC63A2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */,
+				F8B9427F27D62D2700DC63A2 /* ListCoinViewController.swift */,
+				F8B9428427D62D2900DC63A2 /* Assets.xcassets */,
+				F8B942AC27D6359700DC63A2 /* Storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F8B942AC27D6359700DC63A2 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F8B9428627D62D2900DC63A2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F8B942AD27D635BE00DC63A2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F8B942AE27D635F000DC63A2 /* Api */,
+				F8B942B027D6360800DC63A2 /* DataStore */,
+				F8B942BB27D636D100DC63A2 /* Controller */,
+				F8B942B327D6363500DC63A2 /* Coordinator */,
+				F8B942B427D6364700DC63A2 /* Infrastructure */,
+				F8B942B227D6362A00DC63A2 /* Model */,
+				F8B942B127D6361C00DC63A2 /* ViewModel */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F8B942AE27D635F000DC63A2 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				F8B942AF27D635F900DC63A2 /* Manager */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		F8B942AF27D635F900DC63A2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F8B942B027D6360800DC63A2 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		F8B942B127D6361C00DC63A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F8B942B227D6362A00DC63A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8B942B327D6363500DC63A2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F8B942BC27D6373700DC63A2 /* Coordinator.swift */,
+				F8B942BE27D6384D00DC63A2 /* ListCoinCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F8B942B427D6364700DC63A2 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F8B942BA27D636B200DC63A2 /* Utils */,
+				F8B942B927D636A000DC63A2 /* Extensions */,
+				F8B942B827D6369900DC63A2 /* Enums */,
+				F8B942B727D6368800DC63A2 /* Constants */,
+				F8B942B627D6367B00DC63A2 /* Components */,
+				F8B942B527D6367400DC63A2 /* Api */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		F8B942B527D6367400DC63A2 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		F8B942B627D6367B00DC63A2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F8B942B727D6368800DC63A2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F8B942B827D6369900DC63A2 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F8B942B927D636A000DC63A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F8B942BA27D636B200DC63A2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F8B942BB27D636D100DC63A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +393,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8B9428027D62D2700DC63A2 /* ViewController.swift in Sources */,
+				F8B9428027D62D2700DC63A2 /* ListCoinViewController.swift in Sources */,
+				F8B942BF27D6384D00DC63A2 /* ListCoinCoordinator.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,
+				F8B942BD27D6373700DC63A2 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +571,6 @@
 				INFOPLIST_FILE = MasterCoin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -455,7 +598,6 @@
 				INFOPLIST_FILE = MasterCoin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
