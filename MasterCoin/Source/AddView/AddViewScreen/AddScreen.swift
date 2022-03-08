@@ -41,8 +41,22 @@ class AddScreen: UIView {
         button.layer.borderColor = UIColor.white.cgColor // borda branca ao botao
         button.layer.cornerRadius = 7.5
         button.backgroundColor = UIColor(red: 141/255, green: 149/255, blue: 98/255, alpha: 1.0)
+        button.addTarget(self, action: #selector(self.onClickAddButton), for: .touchUpInside)
         
         return button
+    }()
+    
+    
+    lazy var listView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
+    
+        view.sizeToFit()
+        
+        
+        
+        return view
     }()
     
    override init(frame: CGRect) {
@@ -50,6 +64,7 @@ class AddScreen: UIView {
        self.configuracoesDeBackground() // cor de fundo
        self.configuracoesDeSuperView() // elementos
        self.setUpConstraint()
+       
     }
     
     
@@ -58,11 +73,22 @@ class AddScreen: UIView {
         
     }
     
+    private func configuracoesTopBar(){
+        
+       
+        
+    }
+    
     private func configuracoesDeSuperView(){
         self.addSubview(self.coinValueLabel)
         self.addSubview(self.logoCoinImageView)
         self.addSubview(self.addButton)
+        self.addSubview(self.listView)
         
+    }
+    
+    @objc private func onClickAddButton(){
+        print("Add Select coin")
     }
     
     required init?(coder: NSCoder) {
@@ -74,23 +100,27 @@ class AddScreen: UIView {
         NSLayoutConstraint.activate([
             
             //Image Coin Constraint
-            self.logoCoinImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
+            self.logoCoinImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
             self.logoCoinImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             //Coin Value Constraint
-            self.coinValueLabel.topAnchor.constraint(equalTo: self.logoCoinImageView.bottomAnchor,constant: -50),
-            self.coinValueLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 85),
-            self.coinValueLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 100),
+            self.coinValueLabel.topAnchor.constraint(equalTo: self.logoCoinImageView.bottomAnchor,constant: -40),
+            self.coinValueLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 120),
+            self.coinValueLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
             self.coinValueLabel.heightAnchor.constraint(equalToConstant: 150),
             
             //Button Constraint
-            self.addButton.topAnchor.constraint(equalTo: self.coinValueLabel.bottomAnchor, constant: -50),
+            self.addButton.topAnchor.constraint(equalTo: self.coinValueLabel.bottomAnchor, constant: -5),
             self.addButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             self.addButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
-            self.addButton.heightAnchor.constraint(equalToConstant: 45)
+            self.addButton.heightAnchor.constraint(equalToConstant: 45),
             
+            //List View
+            self.listView.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 110),
+            self.listView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -30),
+            self.listView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
+            self.listView.heightAnchor.constraint(equalToConstant: 1000),
             
         ])
     }
 }
-
