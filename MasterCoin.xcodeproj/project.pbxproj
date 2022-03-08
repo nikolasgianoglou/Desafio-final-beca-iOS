@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1EA35027D6874A00E4A9D5 /* AddScreen.swift */; };
+		BE1EA35327D6877300E4A9D5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1EA35227D6877300E4A9D5 /* AddViewController.swift */; };
 		F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */; };
 		F8B9428027D62D2700DC63A2 /* ListCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9427F27D62D2700DC63A2 /* ListCoinViewController.swift */; };
 		F8B9428527D62D2900DC63A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B9428427D62D2900DC63A2 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE1EA35027D6874A00E4A9D5 /* AddScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreen.swift; sourceTree = "<group>"; };
+		BE1EA35227D6877300E4A9D5 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F8B9427827D62D2700DC63A2 /* MasterCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B9427F27D62D2700DC63A2 /* ListCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE1EA34B27D6861C00E4A9D5 /* AddView */ = {
+			isa = PBXGroup;
+			children = (
+				BE1EA34C27D6863200E4A9D5 /* AddViewScreen */,
+				BE1EA34D27D6865100E4A9D5 /* AddViewController */,
+			);
+			path = AddView;
+			sourceTree = "<group>";
+		};
+		BE1EA34C27D6863200E4A9D5 /* AddViewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BE1EA35027D6874A00E4A9D5 /* AddScreen.swift */,
+			);
+			path = AddViewScreen;
+			sourceTree = "<group>";
+		};
+		BE1EA34D27D6865100E4A9D5 /* AddViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE1EA35227D6877300E4A9D5 /* AddViewController.swift */,
+			);
+			path = AddViewController;
+			sourceTree = "<group>";
+		};
 		F8B9426F27D62D2600DC63A2 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +193,7 @@
 		F8B942AD27D635BE00DC63A2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BE1EA34B27D6861C00E4A9D5 /* AddView */,
 				F8B942AE27D635F000DC63A2 /* Api */,
 				F8B942B027D6360800DC63A2 /* DataStore */,
 				F8B942BB27D636D100DC63A2 /* Controller */,
@@ -431,7 +461,9 @@
 				F8B942BF27D6384D00DC63A2 /* ListCoinCoordinator.swift in Sources */,
 				F8B942C527D640C900DC63A2 /* File2.swift in Sources */,
 				F8B942CD27D640F200DC63A2 /* File6.swift in Sources */,
+				BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,
+				BE1EA35327D6877300E4A9D5 /* AddViewController.swift in Sources */,
 				F8B942C127D640A500DC63A2 /* File1.swift in Sources */,
 				F8B942CB27D640E800DC63A2 /* File5.swift in Sources */,
 				F8B942C927D640DF00DC63A2 /* File4.swift in Sources */,
