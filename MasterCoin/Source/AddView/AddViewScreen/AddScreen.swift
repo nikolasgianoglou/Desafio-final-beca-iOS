@@ -8,17 +8,24 @@
 import UIKit
 
 class AddScreen: UIView {
+    
+    //MARK: - Labels
 
-    // MARK: - Valor Moeda
-    lazy var coinValueLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 25)
-        label.text = "$ 00,000.00"
-        return label
-    }()
-
+    //Letters
+    var volumesNegociaveis = LabelDefault(title: "volumes negociados")
+    var lastHour = LabelDefault(title: "última hora")
+    var lastMonth = LabelDefault(title: "último mês")
+    var lastYear = LabelDefault(title: "último ano")
+    var nameCoin = LabelDefault(title: "BTC")
+    
+    //Numbers
+    var coinValueLabel = LabelDefault(title: "$ 00,000.00")
+    var lastHourCoin = LabelDefault(title: "$ 00,000.00")
+    var lastMonthCoin = LabelDefault(title: "$ 00,000.00")
+    var lastYearCoin = LabelDefault(title: "$ 00,000.00")
+    
+    
+    
     // MARK: - Imagem Moeda
     lazy var logoCoinImageView: UIImageView = {
         let image = UIImageView()
@@ -57,89 +64,13 @@ class AddScreen: UIView {
         
         return view
     }()
-    // MARK: - Volumes Negociaveis
-    lazy var volumesNegociaveis: UILabel = {
-       let label = UILabel()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       label.textColor = .white
-       label.font = UIFont.systemFont(ofSize: 20)
-       label.text = " volumes negociados "
-        
-       return label
-    }()
-    
-    
-    lazy var lastHour: UILabel = {
-       let label = UILabel()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       label.textColor = .white
-       label.font = UIFont.systemFont(ofSize: 17)
-       label.text = " última hora "
-        
-       return label
-    }()
-    
-    
-    lazy var lastMonth: UILabel = {
-       let label = UILabel()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       label.textColor = .white
-       label.font = UIFont.systemFont(ofSize: 17)
-       label.text = " última mês "
-        
-       return label
-    }()
-    
-    
-    lazy var lastYear: UILabel = {
-       let label = UILabel()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       label.textColor = .white
-       label.font = UIFont.systemFont(ofSize: 17)
-       label.text = " última ano "
-        
-       return label
-    }()
-    
-    
-    lazy var lastHourCoin: UILabel = {
-       let label = UILabel()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       label.textColor = .white
-       label.font = UIFont.systemFont(ofSize: 17)
-       label.text = "$ 00,000.00"
-        
-       return label
-    }()
-    
-    
-    lazy var lastMonthCoin: UILabel = {
-       let label = UILabel()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       label.textColor = .white
-       label.font = UIFont.systemFont(ofSize: 17)
-       label.text = "$ 00,000.00"
-        
-       return label
-    }()
-    
-    
-    lazy var lastYearCoin: UILabel = {
-       let label = UILabel()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       label.textColor = .white
-       label.font = UIFont.systemFont(ofSize: 17)
-       label.text = "$ 00,000.00"
-        
-       return label
-    }()
-    
     
    override init(frame: CGRect) {
        super.init(frame: frame)
        self.configuracoesDeBackground() // cor de fundo
        self.configuracoesDeSuperView() // elementos
        self.setUpConstraint() //constraint
+       self.configuracoesLabel()
        
     }
     
@@ -147,17 +78,34 @@ class AddScreen: UIView {
         self.backgroundColor = UIColor(red: 141/255, green: 149/255, blue: 98/255, alpha: 1.0)
         
     }
-    
-    private func configuracoesTopBar(){
+    //MARK: - Função das Labels
+    private func configuracoesLabel(){
         
+        //Letters
+        volumesNegociaveis.font = UIFont.systemFont(ofSize: 25)
+        nameCoin.font = UIFont.boldSystemFont(ofSize: 20)
+        lastHour.font = UIFont.systemFont(ofSize: 17)
+        lastMonth.font = UIFont.systemFont(ofSize: 17)
+        lastYear.font = UIFont.systemFont(ofSize: 17)
+        
+
+        //Numbers
+        coinValueLabel.font = UIFont.systemFont(ofSize: 25)
+        lastHourCoin.font = UIFont.systemFont(ofSize: 17)
+        lastMonthCoin.font = UIFont.systemFont(ofSize: 17)
+        lastYearCoin.font = UIFont.systemFont(ofSize: 17)
     }
     
+    //MARK: - Função das Constraints
     private func configuracoesDeSuperView(){
+        
+        //Constraints View verde
         self.addSubview(self.coinValueLabel)
         self.addSubview(self.logoCoinImageView)
         self.addSubview(self.addButton)
         self.addSubview(self.listView)
         self.addSubview(self.volumesNegociaveis)
+        self.addSubview(self.nameCoin)
         
         //Datas View Preta
         self.addSubview(self.lastHour)
@@ -168,7 +116,6 @@ class AddScreen: UIView {
         self.addSubview(self.lastHourCoin)
         self.addSubview(self.lastMonthCoin)
         self.addSubview(self.lastYearCoin)
-        
 
     }
     
@@ -185,6 +132,10 @@ class AddScreen: UIView {
     private func setUpConstraint(){
         
         NSLayoutConstraint.activate([
+            
+            self.nameCoin.topAnchor.constraint(equalTo: self.topAnchor, constant: 40),
+            self.nameCoin.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            
             
             //Image Coin Constraint
             self.logoCoinImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
@@ -238,3 +189,4 @@ class AddScreen: UIView {
         ])
     }
 }
+

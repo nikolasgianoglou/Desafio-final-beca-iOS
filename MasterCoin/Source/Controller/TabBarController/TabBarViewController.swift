@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController {
       favoriteCoin.title = "Adicionadas"
       self.setViewControllers([listCoin,favoriteCoin], animated: false)
       guard let items = self.tabBar.items else {return}
-      let images = ["house", "star"]
+      let images = ["dollarsign.circle", "star.circle"]
       self.tabBar.barTintColor = .black
       for i in 0...items.count - 1 {
         if #available(iOS 15, *) {
@@ -26,8 +26,4 @@ class TabBarViewController: UITabBarController {
         
       }
     }
-    
-
-  
-
 }
