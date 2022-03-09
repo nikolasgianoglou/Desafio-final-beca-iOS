@@ -19,8 +19,8 @@ class ListCoinViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.listCoin?.tableViewDelegates(delegate: self, dataSource: self)
-    self.listCoin?.searchBarDelegate(delegate: self)
+    //self.listCoin?.tableViewDelegates(delegate: self, dataSource: self)
+    //self.listCoin?.searchBarDelegate(delegate: self)
     self.navigationController?.isNavigationBarHidden = true
     navigationController?.navigationBar.barStyle = .black
   }

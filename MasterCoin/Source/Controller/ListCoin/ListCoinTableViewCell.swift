@@ -14,7 +14,7 @@ class ListCoinTableViewCell: UITableViewCell {
   //MARK: - Initializers
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    self.contentView.backgroundColor = .black//UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
+    self.contentView.backgroundColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
     
 
 
