@@ -19,15 +19,18 @@ class ListCoinViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .red
     self.listCoin?.tableViewDelegates(delegate: self, dataSource: self)
+    self.listCoin?.searchBarDelegate(delegate: self)
+    self.navigationController?.isNavigationBarHidden = true
+    navigationController?.navigationBar.barStyle = .black
   }
 
 }
 
+
 extension ListCoinViewController: UITableViewDelegate, UITableViewDataSource{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 15
+    return 10
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,7 +38,8 @@ extension ListCoinViewController: UITableViewDelegate, UITableViewDataSource{
     return cell ?? ListCoinTableViewCell()
     
   }
-
-
 }
 
+extension ListCoinViewController: UISearchBarDelegate{
+  
+}

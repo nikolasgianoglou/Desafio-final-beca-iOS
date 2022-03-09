@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1EA35027D6874A00E4A9D5 /* AddScreen.swift */; };
 		BE1EA35327D6877300E4A9D5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1EA35227D6877300E4A9D5 /* AddViewController.swift */; };
+		F802719027D8F2D300CFC6C0 /* FavoriteCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802718F27D8F2D300CFC6C0 /* FavoriteCoinViewController.swift */; };
+		F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */; };
 		F85BC27E27D7A2BC00D60FF7 /* ListCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85BC27D27D7A2BC00D60FF7 /* ListCoinView.swift */; };
 		F85BC28027D7A2E700D60FF7 /* ListCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85BC27F27D7A2E700D60FF7 /* ListCoinTableViewCell.swift */; };
 		F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		BE1EA35027D6874A00E4A9D5 /* AddScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreen.swift; sourceTree = "<group>"; };
 		BE1EA35227D6877300E4A9D5 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		F802718F27D8F2D300CFC6C0 /* FavoriteCoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCoinViewController.swift; sourceTree = "<group>"; };
+		F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F85BC27D27D7A2BC00D60FF7 /* ListCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinView.swift; sourceTree = "<group>"; };
 		F85BC27F27D7A2E700D60FF7 /* ListCoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinTableViewCell.swift; sourceTree = "<group>"; };
 		F8B9427827D62D2700DC63A2 /* MasterCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +131,22 @@
 				BE1EA35227D6877300E4A9D5 /* AddViewController.swift */,
 			);
 			path = AddViewController;
+			sourceTree = "<group>";
+		};
+		F802718E27D8F2B700CFC6C0 /* FavoriteCoinController */ = {
+			isa = PBXGroup;
+			children = (
+				F802718F27D8F2D300CFC6C0 /* FavoriteCoinViewController.swift */,
+			);
+			path = FavoriteCoinController;
+			sourceTree = "<group>";
+		};
+		F802719127D8F2EE00CFC6C0 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		F85BC27C27D7A27200D60FF7 /* ListCoin */ = {
@@ -332,6 +352,8 @@
 		F8B942BB27D636D100DC63A2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F802719127D8F2EE00CFC6C0 /* TabBarController */,
+				F802718E27D8F2B700CFC6C0 /* FavoriteCoinController */,
 				F85BC27C27D7A27200D60FF7 /* ListCoin */,
 			);
 			path = Controller;
@@ -475,8 +497,10 @@
 				F8B942BF27D6384D00DC63A2 /* ListCoinCoordinator.swift in Sources */,
 				F85BC28027D7A2E700D60FF7 /* ListCoinTableViewCell.swift in Sources */,
 				F8B942C527D640C900DC63A2 /* File2.swift in Sources */,
+				F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */,
 				F8B942CD27D640F200DC63A2 /* LabelDefault.swift in Sources */,
 				BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */,
+				F802719027D8F2D300CFC6C0 /* FavoriteCoinViewController.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,
 				BE1EA35327D6877300E4A9D5 /* AddViewController.swift in Sources */,
 				F85BC27E27D7A2BC00D60FF7 /* ListCoinView.swift in Sources */,
