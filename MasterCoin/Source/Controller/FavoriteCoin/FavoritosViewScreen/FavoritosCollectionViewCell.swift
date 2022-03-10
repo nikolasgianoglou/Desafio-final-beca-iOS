@@ -25,16 +25,12 @@ class FavoritosCollectionViewCell: UICollectionViewCell {
     
     func configuraConstraints(){
         NSLayoutConstraint.activate([
-        
-            self.favoritosview.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 30),
-            self.favoritosview.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
-            
-            
-//            self.favoritosview.topAnchor.constraint(equalTo: self.topAnchor),
-//            self.favoritosview.leftAnchor.constraint(equalTo: self.leftAnchor),
-//            self.favoritosview.rightAnchor.constraint(equalTo: self.rightAnchor),
-//            self.favoritosview.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-//
+ 
+            self.favoritosview.topAnchor.constraint(equalTo: self.topAnchor),
+            self.favoritosview.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.favoritosview.rightAnchor.constraint(equalTo: self.rightAnchor),
+            self.favoritosview.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+
         
         ])
     }

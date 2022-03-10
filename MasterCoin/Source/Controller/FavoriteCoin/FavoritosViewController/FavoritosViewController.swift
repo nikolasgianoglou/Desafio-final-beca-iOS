@@ -40,7 +40,7 @@ class FavoritosViewController: UIViewController {
 
 extension FavoritosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,3 +54,4 @@ extension FavoritosViewController: UICollectionViewDataSource {
 extension FavoritosViewController: UICollectionViewDelegate {
     
 }
+

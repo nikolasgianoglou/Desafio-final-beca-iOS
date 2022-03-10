@@ -139,13 +139,14 @@
 			path = AddViewController;
 			sourceTree = "<group>";
 		};
-		BE3E459727D92D8400633EBA /* FavoriosViewScreen */ = {
+		BE3E459727D92D8400633EBA /* FavoritosViewScreen */ = {
 			isa = PBXGroup;
 			children = (
+				BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */,
 				BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */,
 				BE3E45B627DA5FB700633EBA /* FavoritosView.swift */,
 			);
-			path = FavoriosViewScreen;
+			path = FavoritosViewScreen;
 			sourceTree = "<group>";
 		};
 		BE3E459827D92D9800633EBA /* FavoritosViewController */ = {
@@ -156,19 +157,10 @@
 			path = FavoritosViewController;
 			sourceTree = "<group>";
 		};
-		BE3E45B327DA5C9600633EBA /* FavoritosCollections */ = {
-			isa = PBXGroup;
-			children = (
-				BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */,
-			);
-			path = FavoritosCollections;
-			sourceTree = "<group>";
-		};
 		F802718E27D8F2B700CFC6C0 /* FavoriteCoin */ = {
 			isa = PBXGroup;
 			children = (
-				BE3E45B327DA5C9600633EBA /* FavoritosCollections */,
-				BE3E459727D92D8400633EBA /* FavoriosViewScreen */,
+				BE3E459727D92D8400633EBA /* FavoritosViewScreen */,
 				BE3E459827D92D9800633EBA /* FavoritosViewController */,
 			);
 			path = FavoriteCoin;
