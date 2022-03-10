@@ -8,13 +8,14 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-
+    
+    
     override func viewDidLoad() {
       super.viewDidLoad()
       let listCoin = ListCoinViewController()
       listCoin.title = "Moedas"
-      let favoriteCoin = FavoriteCoinViewController()
-      favoriteCoin.title = "Adicionadas"
+      let favoriteCoin = FavoritosViewController()
+      favoriteCoin.title = "Favoritas"
       self.setViewControllers([listCoin,favoriteCoin], animated: false)
       guard let items = self.tabBar.items else {return}
       let images = ["dollarsign.circle", "star.circle"]
