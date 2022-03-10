@@ -14,7 +14,7 @@ class ListCoinTableViewCell: UITableViewCell {
   //MARK: - Initializers
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    self.contentView.backgroundColor = .black//UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
+    self.contentView.backgroundColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
     
 
 
@@ -35,6 +35,15 @@ class ListCoinTableViewCell: UITableViewCell {
       image.contentMode = .scaleAspectFill
       return image
     }()
+  
+    lazy var starImage: UIImageView = {
+      let image = UIImageView()
+      image.translatesAutoresizingMaskIntoConstraints = false
+      image.backgroundColor = .red
+      image.contentMode = .scaleAspectFit
+      image.isHidden = true
+      return image
+    }()
 
     let nameLabel = LabelDefault(title: "Bitcoin")
     let abreviationLabel = LabelDefault(title: "BTC")
@@ -46,6 +55,7 @@ class ListCoinTableViewCell: UITableViewCell {
         self.contentView.addSubview(self.nameLabel)
         self.contentView.addSubview(self.abreviationLabel)
         self.contentView.addSubview(self.valueLabel)
+        self.contentView.addSubview(starImage)
       }
 
     override func awakeFromNib() {
@@ -74,7 +84,12 @@ class ListCoinTableViewCell: UITableViewCell {
       self.abreviationLabel.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor),
       
       self.valueLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10),
-      self.valueLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
+      self.valueLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+      
+      self.starImage.bottomAnchor.constraint(equalTo: self.nameLabel.bottomAnchor),
+      self.starImage.leftAnchor.constraint(equalTo: self.nameLabel.rightAnchor, constant: 8),
+      self.starImage.widthAnchor.constraint(equalToConstant: 10),
+      self.starImage.heightAnchor.constraint(equalToConstant: 10),
       
     ])
   }

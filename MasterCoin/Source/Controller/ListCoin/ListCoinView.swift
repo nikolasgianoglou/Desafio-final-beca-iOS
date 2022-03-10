@@ -9,12 +9,17 @@ import UIKit
 
 class ListCoinView: UIView {
 
+
+
   //MARK: - Components
   lazy var tableView: UITableView = {
     let tableView = UITableView()
     tableView.translatesAutoresizingMaskIntoConstraints = false
     tableView.backgroundColor = .black
     tableView.register(ListCoinTableViewCell.self, forCellReuseIdentifier: ListCoinTableViewCell.identifier)
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.backgroundColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
     return tableView
   }()
     
@@ -25,15 +30,16 @@ class ListCoinView: UIView {
     searchBar.frame = CGRect(x: 0, y: 65, width: (self.bounds.size.width), height: 1)
     searchBar.placeholder = " Search..."
     searchBar.sizeToFit()
-    searchBar.barTintColor = .black
+    searchBar.barTintColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
     searchBar.isTranslucent = false
+    searchBar.delegate = self
     return searchBar
   }()
   
   lazy var topView: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
-    view.backgroundColor = .black//UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
+    view.backgroundColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
     return view
   }()
     
@@ -52,14 +58,14 @@ class ListCoinView: UIView {
   }
    
   //MARK: - Delegates
-  public func tableViewDelegates(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
-    self.tableView.delegate = delegate
-    self.tableView.dataSource = dataSource
-  }
-  
-  public func searchBarDelegate(delegate: UISearchBarDelegate){
-    searchBar.delegate = delegate
-  }
+//  public func tableViewDelegates(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+//    self.tableView.delegate = delegate
+//    self.tableView.dataSource = dataSource
+//  }
+//
+//  public func searchBarDelegate(delegate: UISearchBarDelegate){
+//    searchBar.delegate = delegate
+//  }
   
   //MARK: - Configure View
   func addSubview() {
@@ -96,3 +102,26 @@ class ListCoinView: UIView {
 }
 
 
+extension ListCoinView: UITableViewDataSource{
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 10
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell: ListCoinTableViewCell? = tableView.dequeueReusableCell(withIdentifier: ListCoinTableViewCell.identifier, for: indexPath) as? ListCoinTableViewCell
+    return cell ?? ListCoinTableViewCell()
+  }
+  
+  
+}
+
+extension ListCoinView: UITableViewDelegate{
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+  }
+  
+}
+
+extension ListCoinView: UISearchBarDelegate{
+  
+}
