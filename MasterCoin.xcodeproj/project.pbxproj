@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1EA35027D6874A00E4A9D5 /* AddScreen.swift */; };
 		BE1EA35327D6877300E4A9D5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1EA35227D6877300E4A9D5 /* AddViewController.swift */; };
-		F802719027D8F2D300CFC6C0 /* FavoriteCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802718F27D8F2D300CFC6C0 /* FavoriteCoinViewController.swift */; };
+		BE3E45B027DA5C0B00633EBA /* FavoritosScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */; };
+		BE3E45B227DA5C5B00633EBA /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */; };
+		BE3E45B527DA5F6200633EBA /* FavoritosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */; };
+		BE3E45B727DA5FB700633EBA /* FavoritosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B627DA5FB700633EBA /* FavoritosView.swift */; };
 		F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */; };
 		F85BC27E27D7A2BC00D60FF7 /* ListCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85BC27D27D7A2BC00D60FF7 /* ListCoinView.swift */; };
 		F85BC28027D7A2E700D60FF7 /* ListCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85BC27F27D7A2E700D60FF7 /* ListCoinTableViewCell.swift */; };
@@ -54,7 +57,10 @@
 /* Begin PBXFileReference section */
 		BE1EA35027D6874A00E4A9D5 /* AddScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreen.swift; sourceTree = "<group>"; };
 		BE1EA35227D6877300E4A9D5 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		F802718F27D8F2D300CFC6C0 /* FavoriteCoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCoinViewController.swift; sourceTree = "<group>"; };
+		BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosScreen.swift; sourceTree = "<group>"; };
+		BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
+		BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE3E45B627DA5FB700633EBA /* FavoritosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosView.swift; sourceTree = "<group>"; };
 		F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F85BC27D27D7A2BC00D60FF7 /* ListCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinView.swift; sourceTree = "<group>"; };
 		F85BC27F27D7A2E700D60FF7 /* ListCoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,12 +139,39 @@
 			path = AddViewController;
 			sourceTree = "<group>";
 		};
-		F802718E27D8F2B700CFC6C0 /* FavoriteCoinController */ = {
+		BE3E459727D92D8400633EBA /* FavoriosViewScreen */ = {
 			isa = PBXGroup;
 			children = (
-				F802718F27D8F2D300CFC6C0 /* FavoriteCoinViewController.swift */,
+				BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */,
+				BE3E45B627DA5FB700633EBA /* FavoritosView.swift */,
 			);
-			path = FavoriteCoinController;
+			path = FavoriosViewScreen;
+			sourceTree = "<group>";
+		};
+		BE3E459827D92D9800633EBA /* FavoritosViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */,
+			);
+			path = FavoritosViewController;
+			sourceTree = "<group>";
+		};
+		BE3E45B327DA5C9600633EBA /* FavoritosCollections */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */,
+			);
+			path = FavoritosCollections;
+			sourceTree = "<group>";
+		};
+		F802718E27D8F2B700CFC6C0 /* FavoriteCoin */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E45B327DA5C9600633EBA /* FavoritosCollections */,
+				BE3E459727D92D8400633EBA /* FavoriosViewScreen */,
+				BE3E459827D92D9800633EBA /* FavoritosViewController */,
+			);
+			path = FavoriteCoin;
 			sourceTree = "<group>";
 		};
 		F802719127D8F2EE00CFC6C0 /* TabBarController */ = {
@@ -353,7 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				F802719127D8F2EE00CFC6C0 /* TabBarController */,
-				F802718E27D8F2B700CFC6C0 /* FavoriteCoinController */,
+				F802718E27D8F2B700CFC6C0 /* FavoriteCoin */,
 				F85BC27C27D7A27200D60FF7 /* ListCoin */,
 			);
 			path = Controller;
@@ -490,20 +523,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B942C327D640BD00DC63A2 /* BaseManager.swift in Sources */,
+				BE3E45B027DA5C0B00633EBA /* FavoritosScreen.swift in Sources */,
 				F8B942CF27D640FB00DC63A2 /* File7.swift in Sources */,
 				F8B942D327D6411200DC63A2 /* File10.swift in Sources */,
 				F8B942C727D640D400DC63A2 /* File3.swift in Sources */,
 				F8B9428027D62D2700DC63A2 /* ListCoinViewController.swift in Sources */,
 				F8B942BF27D6384D00DC63A2 /* ListCoinCoordinator.swift in Sources */,
 				F85BC28027D7A2E700D60FF7 /* ListCoinTableViewCell.swift in Sources */,
+				BE3E45B227DA5C5B00633EBA /* FavoritosViewController.swift in Sources */,
 				F8B942C527D640C900DC63A2 /* File2.swift in Sources */,
 				F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */,
 				F8B942CD27D640F200DC63A2 /* LabelDefault.swift in Sources */,
 				BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */,
-				F802719027D8F2D300CFC6C0 /* FavoriteCoinViewController.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,
 				BE1EA35327D6877300E4A9D5 /* AddViewController.swift in Sources */,
+				BE3E45B727DA5FB700633EBA /* FavoritosView.swift in Sources */,
 				F85BC27E27D7A2BC00D60FF7 /* ListCoinView.swift in Sources */,
+				BE3E45B527DA5F6200633EBA /* FavoritosCollectionViewCell.swift in Sources */,
 				F8B942C127D640A500DC63A2 /* File1.swift in Sources */,
 				F8B942CB27D640E800DC63A2 /* File5.swift in Sources */,
 				F8B942C927D640DF00DC63A2 /* File4.swift in Sources */,

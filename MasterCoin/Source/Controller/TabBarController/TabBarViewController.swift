@@ -8,19 +8,13 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.navigationController?.isNavigationBarHidden = true
-    self.view.backgroundColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
-  }
 
     override func viewDidLoad() {
       super.viewDidLoad()
       let listCoin = ListCoinViewController()
       listCoin.title = "Moedas"
-      let favoriteCoin = FavoriteCoinViewController()
-      favoriteCoin.title = "Adicionadas"
+      let favoriteCoin = FavoritosViewController()
+      favoriteCoin.title = "Favoritas"
       self.setViewControllers([listCoin,favoriteCoin], animated: false)
       guard let items = self.tabBar.items else {return}
       let images = ["dollarsign.circle", "star.circle"]
