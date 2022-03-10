@@ -153,11 +153,11 @@ class AddScreen: UIView {
             self.addButton.heightAnchor.constraint(equalToConstant: 45),
             
             //List View
-            self.listView.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 40),
-            self.listView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -30),
-            self.listView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
-            self.listView.heightAnchor.constraint(equalToConstant: 1000),
-            
+           
+            self.listView.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 40), self.listView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.listView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.listView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+
             //Volumes Negociaveis
             self.volumesNegociaveis.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 20),
             self.volumesNegociaveis.centerXAnchor.constraint(equalTo: self.centerXAnchor),

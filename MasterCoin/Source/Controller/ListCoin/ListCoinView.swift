@@ -9,8 +9,7 @@ import UIKit
 
 class ListCoinView: UIView {
 
-
-
+    var onVoltar: (() -> Void)!
   //MARK: - Components
   lazy var tableView: UITableView = {
     let tableView = UITableView()
@@ -117,7 +116,7 @@ extension ListCoinView: UITableViewDataSource{
 
 extension ListCoinView: UITableViewDelegate{
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+      self.onVoltar?()
   }
   
 }

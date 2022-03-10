@@ -8,19 +8,7 @@
 import UIKit
 
 class FavoritosView: UIView {
-    
-    
-    lazy var logoCoinImageView: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "coin")
-        image.tintColor = .orange
-        image.contentMode = .scaleAspectFit
-        image.backgroundColor = UIColor(red: 141/255, green: 149/255, blue: 98/255, alpha: 1.0/255)
-        return image
         
-    }()
-    
     var nameCoin = LabelDefault(title: "Bitcoin")
     var abreviationCoin = LabelDefault(title: "BTC")
     var value = LabelDefault(title: "$ 00,000.00")
@@ -37,6 +25,7 @@ class FavoritosView: UIView {
     
     func configuraAddSubView(){
         
+       
         self.addSubview(nameCoin)
         self.addSubview(abreviationCoin)
         self.addSubview(value)
@@ -46,17 +35,19 @@ class FavoritosView: UIView {
     func configuraConstraints(){
         
         NSLayoutConstraint.activate([
+            
+            
+           
         
-            self.nameCoin.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            self.nameCoin.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.nameCoin.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            self.nameCoin.centerXAnchor.constraint(equalTo: self.centerXAnchor,  constant: 50),
             
             self.abreviationCoin.topAnchor.constraint(equalTo: self.nameCoin.bottomAnchor, constant: 10),
-            self.abreviationCoin.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.abreviationCoin.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 50),
             
-            self.value.topAnchor.constraint(equalTo: self.abreviationCoin.bottomAnchor, constant: 15),
-            self.value.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.value.topAnchor.constraint(equalTo: self.abreviationCoin.bottomAnchor, constant: 10),
+            self.value.centerXAnchor.constraint(equalTo: self.centerXAnchor,  constant: 50),
             
-        
         ])
     }
 
