@@ -43,7 +43,7 @@ class ListCoinView: UIView {
   }()
     
   let titleLabel = LabelDefault(title: "Moeda Digital")
-  let subtitleLabel = LabelDefault(title: "4 jan 2020")
+  let subtitleLabel = LabelDefault(title: "DD MM AAAA")
   
   //MARK: - Initializers
   override init (frame: CGRect){
@@ -57,14 +57,14 @@ class ListCoinView: UIView {
   }
    
   //MARK: - Delegates
-//  public func tableViewDelegates(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
-//    self.tableView.delegate = delegate
-//    self.tableView.dataSource = dataSource
-//  }
-//
-//  public func searchBarDelegate(delegate: UISearchBarDelegate){
-//    searchBar.delegate = delegate
-//  }
+  public func tableViewDelegates(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+    self.tableView.delegate = delegate
+    self.tableView.dataSource = dataSource
+  }
+
+  public func searchBarDelegate(delegate: UISearchBarDelegate){
+    searchBar.delegate = delegate
+  }
   
   //MARK: - Configure View
   func addSubview() {
@@ -78,6 +78,7 @@ class ListCoinView: UIView {
   //MARK: - Constraints
   private func setUpConstraints(){
     NSLayoutConstraint.activate([
+        
       self.tableView.topAnchor.constraint(equalTo: self.topView.bottomAnchor),
       self.tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
       self.tableView.rightAnchor.constraint(equalTo: self.rightAnchor),

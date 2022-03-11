@@ -7,7 +7,21 @@
 
 import UIKit
 
+protocol AddScreenProtocol:class{
+    func actionAddButton()
+}
+
+
 class AddScreen: UIView {
+    
+    
+    weak var delegate: AddScreenProtocol?
+    
+    func delegate(delegate:AddScreenProtocol?){
+        self.delegate = delegate
+    }
+    
+  
     
     //MARK: - Labels
 
@@ -120,7 +134,7 @@ class AddScreen: UIView {
     }
     
     @objc private func onClickAddButton(){
-        print("Adicinou uma moeda aos favoritos")
+        self.delegate?.actionAddButton()
     }
     
     required init?(coder: NSCoder) {
@@ -153,8 +167,8 @@ class AddScreen: UIView {
             self.addButton.heightAnchor.constraint(equalToConstant: 45),
             
             //List View
-           
-            self.listView.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 40), self.listView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.listView.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 40),
+            self.listView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.listView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.listView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 

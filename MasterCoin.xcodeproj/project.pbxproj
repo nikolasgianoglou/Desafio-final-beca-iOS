@@ -13,6 +13,8 @@
 		BE3E45B227DA5C5B00633EBA /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */; };
 		BE3E45B527DA5F6200633EBA /* FavoritosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */; };
 		BE3E45B727DA5FB700633EBA /* FavoritosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B627DA5FB700633EBA /* FavoritosView.swift */; };
+		BEFABDAD27DB9A900089FFE0 /* RemoveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFABDAC27DB9A900089FFE0 /* RemoveScreen.swift */; };
+		BEFABDAF27DB9AB90089FFE0 /* RemoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFABDAE27DB9AB90089FFE0 /* RemoveViewController.swift */; };
 		F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */; };
 		F85BC27E27D7A2BC00D60FF7 /* ListCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85BC27D27D7A2BC00D60FF7 /* ListCoinView.swift */; };
 		F85BC28027D7A2E700D60FF7 /* ListCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85BC27F27D7A2E700D60FF7 /* ListCoinTableViewCell.swift */; };
@@ -61,6 +63,8 @@
 		BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE3E45B627DA5FB700633EBA /* FavoritosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosView.swift; sourceTree = "<group>"; };
+		BEFABDAC27DB9A900089FFE0 /* RemoveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveScreen.swift; sourceTree = "<group>"; };
+		BEFABDAE27DB9AB90089FFE0 /* RemoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveViewController.swift; sourceTree = "<group>"; };
 		F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F85BC27D27D7A2BC00D60FF7 /* ListCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinView.swift; sourceTree = "<group>"; };
 		F85BC27F27D7A2E700D60FF7 /* ListCoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +159,31 @@
 				BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */,
 			);
 			path = FavoritosViewController;
+			sourceTree = "<group>";
+		};
+		BEFABDA927DB9A240089FFE0 /* RemoveView */ = {
+			isa = PBXGroup;
+			children = (
+				BEFABDAB27DB9A450089FFE0 /* RemoveViewController */,
+				BEFABDAA27DB9A310089FFE0 /* RemoveViewScreen */,
+			);
+			path = RemoveView;
+			sourceTree = "<group>";
+		};
+		BEFABDAA27DB9A310089FFE0 /* RemoveViewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BEFABDAE27DB9AB90089FFE0 /* RemoveViewController.swift */,
+			);
+			path = RemoveViewScreen;
+			sourceTree = "<group>";
+		};
+		BEFABDAB27DB9A450089FFE0 /* RemoveViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BEFABDAC27DB9A900089FFE0 /* RemoveScreen.swift */,
+			);
+			path = RemoveViewController;
 			sourceTree = "<group>";
 		};
 		F802718E27D8F2B700CFC6C0 /* FavoriteCoin */ = {
@@ -252,6 +281,7 @@
 		F8B942AD27D635BE00DC63A2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BEFABDA927DB9A240089FFE0 /* RemoveView */,
 				BE1EA34B27D6861C00E4A9D5 /* AddView */,
 				F8B942AE27D635F000DC63A2 /* Api */,
 				F8B942B027D6360800DC63A2 /* DataStore */,
@@ -516,6 +546,7 @@
 			files = (
 				F8B942C327D640BD00DC63A2 /* BaseManager.swift in Sources */,
 				BE3E45B027DA5C0B00633EBA /* FavoritosScreen.swift in Sources */,
+				BEFABDAF27DB9AB90089FFE0 /* RemoveViewController.swift in Sources */,
 				F8B942CF27D640FB00DC63A2 /* File7.swift in Sources */,
 				F8B942D327D6411200DC63A2 /* File10.swift in Sources */,
 				F8B942C727D640D400DC63A2 /* File3.swift in Sources */,
@@ -525,6 +556,7 @@
 				BE3E45B227DA5C5B00633EBA /* FavoritosViewController.swift in Sources */,
 				F8B942C527D640C900DC63A2 /* File2.swift in Sources */,
 				F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */,
+				BEFABDAD27DB9A900089FFE0 /* RemoveScreen.swift in Sources */,
 				F8B942CD27D640F200DC63A2 /* LabelDefault.swift in Sources */,
 				BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,

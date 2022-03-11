@@ -18,6 +18,7 @@ class AddViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.addscreen?.delegate(delegate: self)
 
   }
     
@@ -25,6 +26,15 @@ class AddViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.backItem?.title = "Voltar"
         
+    }
+
+}
+
+extension AddViewController:AddScreenProtocol{
+    func actionAddButton() {
+        print("Adicionando moeda ao Favorito")
+        let vc: RemoveViewController = RemoveViewController()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 
 }

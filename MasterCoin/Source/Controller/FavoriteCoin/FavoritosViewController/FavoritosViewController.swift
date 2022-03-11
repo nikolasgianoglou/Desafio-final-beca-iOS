@@ -9,11 +9,14 @@ import UIKit
 
 class FavoritosViewController: UIViewController {
     
+    var label = UIView()
+
+    
     var favoritosscreen: FavoritosScreen!
     override func loadView() {
        self.favoritosscreen = FavoritosScreen()
         self.view = self.favoritosscreen
-        
+            
     }
     
     override func viewDidLoad() {
@@ -21,7 +24,8 @@ class FavoritosViewController: UIViewController {
         self.configuraConstraints()
         self.favoritosscreen?.collectionView.delegate = self
         self.favoritosscreen?.collectionView.dataSource = self
-
+     
+        //self.setTitle("Moedas Digitais", subtitle: date.toString(format: "dd, MMM yyyy"))
     }
     
     func configuraConstraints(){

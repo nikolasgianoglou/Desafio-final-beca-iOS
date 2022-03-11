@@ -36,9 +36,6 @@ class FavoritosView: UIView {
         
         NSLayoutConstraint.activate([
             
-            
-           
-        
             self.nameCoin.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             self.nameCoin.centerXAnchor.constraint(equalTo: self.centerXAnchor,  constant: 50),
             
