@@ -6,3 +6,9 @@
 //
 
 import Foundation
+class BaseManager{
+  func invalidSession() -> Bool{
+    //Se meu app precisar de verificar o login a logica fica aqui
+    return false
+  }
+}
