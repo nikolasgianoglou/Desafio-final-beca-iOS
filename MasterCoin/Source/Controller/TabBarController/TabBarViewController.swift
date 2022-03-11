@@ -19,6 +19,21 @@ class TabBarViewController: UITabBarController {
       super.viewDidLoad()
       let listCoin = ListCoinViewController()
       listCoin.title = "Moedas"
+      
+      
+      let manager: AssetManagerProtocol = AssetManager()
+      
+      manager.requestTrendings(){
+        trendingViewModel in
+        DataStore.trendingsDataStore.trending = trendingViewModel
+        DispatchQueue.main.async {
+          listCoin.listCoinView?.tableView.reloadData()
+        }
+      }failureHandler: { error in
+        print("Erro")
+        DataStore.trendingsDataStore.trending  = AssetsViewModel()
+    }
+
       let favoriteCoin = FavoritosViewController()
       favoriteCoin.title = "Favoritas"
       self.setViewControllers([listCoin,favoriteCoin], animated: false)

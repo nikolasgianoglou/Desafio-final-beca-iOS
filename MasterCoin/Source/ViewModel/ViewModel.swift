@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class ViewModel<T>{
+  let model: [T]
+  
+  init(model: [T]){
+    self.model = model
+  }
+}

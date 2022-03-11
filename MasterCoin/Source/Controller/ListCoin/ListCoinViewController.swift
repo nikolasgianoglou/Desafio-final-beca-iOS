@@ -9,12 +9,12 @@ import UIKit
 
 class ListCoinViewController: UIViewController {
 
-  var listCoin: ListCoinView?
+  var listCoinView: ListCoinView?
   
   
   override func loadView() {
-    self.listCoin = ListCoinView()
-    self.view = self.listCoin
+    self.listCoinView = ListCoinView()
+    self.view = self.listCoinView
   }
 
   override func viewDidLoad() {
@@ -24,7 +24,7 @@ class ListCoinViewController: UIViewController {
     //self.listCoin?.searchBarDelegate(delegate: self)
     self.navigationController?.isNavigationBarHidden = true
     navigationController?.navigationBar.barStyle = .black
-    listCoin?.onVoltar = {
+    listCoinView?.onVoltar = {
 
         self.navigationController?.pushViewController(AddViewController(), animated: true)
 

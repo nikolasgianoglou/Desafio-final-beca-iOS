@@ -104,11 +104,17 @@ class ListCoinView: UIView {
 
 extension ListCoinView: UITableViewDataSource{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return DataStore.trendingsDataStore.trending.asset.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: ListCoinTableViewCell? = tableView.dequeueReusableCell(withIdentifier: ListCoinTableViewCell.identifier, for: indexPath) as? ListCoinTableViewCell
+    let trendingViewModel = DataStore.trendingsDataStore.trending.asset
+    
+    let teste = trendingViewModel[indexPath.row]
+    cell?.nameLabel.text = teste.name
+    //cell?.valueLabel.text = String(teste.price_usd ?? 0)
+    cell?.abreviationLabel.text = teste.asset_id
     return cell ?? ListCoinTableViewCell()
   }
   
