@@ -35,6 +35,18 @@ class FavoritosScreen: UIView {
 
     }()
     
+    lazy var topView: UIView = {
+      let view = UIView()
+      view.translatesAutoresizingMaskIntoConstraints = false
+      view.backgroundColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
+      return view
+    }()
+      
+    let titleLabel = LabelDefault(title: "Moeda Digital")
+    let subtitleLabel = LabelDefault(title: "DD MM AAAA")
+    
+   
+    //MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,21 +61,40 @@ class FavoritosScreen: UIView {
     func addSubview() {
         self.addSubview(collectionView)
         self.addSubview(logoCoinImageView)
+        self.addSubview(topView)
+        self.addSubview(titleLabel)
+        self.addSubview(subtitleLabel)
     }
     
+    //MARK: - Constraints
     
     func configuraConstraints(){
         NSLayoutConstraint.activate([
         
+            
+            //Top View Constraints
+            topView.topAnchor.constraint(equalTo: self.topAnchor),
+            topView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            topView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            topView.heightAnchor.constraint(equalToConstant: 120),
+            
+            //TitleLabel Constraints
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 160),
+            
+            //Subtitle Coinstraints
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            subtitleLabel.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
+            
             
             self.logoCoinImageView.topAnchor.constraint(equalTo: self.collectionView.topAnchor, constant: -15),
             self.logoCoinImageView.leadingAnchor.constraint(equalTo: self.collectionView.leadingAnchor, constant: 74),
             self.logoCoinImageView.widthAnchor.constraint(equalToConstant: 33),
             self.logoCoinImageView.heightAnchor.constraint(equalToConstant: 33),
             
-            
-            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 170),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 70),
+            //Collection Constraints
+            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 150),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             collectionView.widthAnchor.constraint(equalToConstant: 100),
             collectionView.heightAnchor.constraint(equalToConstant: 100),
             
