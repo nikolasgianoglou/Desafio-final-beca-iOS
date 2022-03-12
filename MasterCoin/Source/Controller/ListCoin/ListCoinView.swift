@@ -109,12 +109,13 @@ extension ListCoinView: UITableViewDataSource{
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: ListCoinTableViewCell? = tableView.dequeueReusableCell(withIdentifier: ListCoinTableViewCell.identifier, for: indexPath) as? ListCoinTableViewCell
-    let trendingViewModel = DataStore.trendingsDataStore.trending.asset
+    let assetViewModel = DataStore.trendingsDataStore.trending.asset
     
-    let teste = trendingViewModel[indexPath.row]
-    cell?.nameLabel.text = teste.name
-    //cell?.valueLabel.text = String(teste.price_usd ?? 0)
-    cell?.abreviationLabel.text = teste.asset_id
+    let selectedAsset = assetViewModel[indexPath.row]
+    cell?.nameLabel.text = selectedAsset.name
+    let priceString = NumberFormatter.numberFormatter.string(from: NSNumber(value: selectedAsset.price_usd ?? 0))
+    cell?.valueLabel.text = priceString
+    cell?.abreviationLabel.text = selectedAsset.asset_id
     return cell ?? ListCoinTableViewCell()
   }
   

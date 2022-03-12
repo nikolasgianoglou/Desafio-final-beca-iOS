@@ -16,6 +16,7 @@
 		BEFABDAD27DB9A900089FFE0 /* RemoveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFABDAC27DB9A900089FFE0 /* RemoveScreen.swift */; };
 		BEFABDAF27DB9AB90089FFE0 /* RemoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFABDAE27DB9AB90089FFE0 /* RemoveViewController.swift */; };
 		F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */; };
+		F85388AA27DCF8CC001EC011 /* NumberFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85388A927DCF8CC001EC011 /* NumberFormatter+.swift */; };
 		F85BC27E27D7A2BC00D60FF7 /* ListCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85BC27D27D7A2BC00D60FF7 /* ListCoinView.swift */; };
 		F85BC28027D7A2E700D60FF7 /* ListCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85BC27F27D7A2E700D60FF7 /* ListCoinTableViewCell.swift */; };
 		F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		BEFABDAC27DB9A900089FFE0 /* RemoveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveScreen.swift; sourceTree = "<group>"; };
 		BEFABDAE27DB9AB90089FFE0 /* RemoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveViewController.swift; sourceTree = "<group>"; };
 		F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F85388A927DCF8CC001EC011 /* NumberFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+.swift"; sourceTree = "<group>"; };
 		F85BC27D27D7A2BC00D60FF7 /* ListCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinView.swift; sourceTree = "<group>"; };
 		F85BC27F27D7A2E700D60FF7 /* ListCoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinTableViewCell.swift; sourceTree = "<group>"; };
 		F8B9427827D62D2700DC63A2 /* MasterCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -411,6 +413,7 @@
 			children = (
 				F8B942C627D640D400DC63A2 /* Bundle+.swift */,
 				F8C9A3FD27DBC745002682A6 /* Data+.swift */,
+				F85388A927DCF8CC001EC011 /* NumberFormatter+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				F8C9A40027DBC7C3002682A6 /* AssetsViewModel.swift in Sources */,
 				BEFABDAD27DB9A900089FFE0 /* RemoveScreen.swift in Sources */,
 				F8B942CD27D640F200DC63A2 /* LabelDefault.swift in Sources */,
+				F85388AA27DCF8CC001EC011 /* NumberFormatter+.swift in Sources */,
 				BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,
 				BE1EA35327D6877300E4A9D5 /* AddViewController.swift in Sources */,
