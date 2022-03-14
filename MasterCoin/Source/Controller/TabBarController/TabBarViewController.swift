@@ -8,7 +8,8 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-  
+    let listCoin = ListCoinViewController()
+    let favoriteCoin = FavoritosViewController()
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       self.navigationController?.isNavigationBarHidden = true
@@ -17,30 +18,15 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      let listCoin = ListCoinViewController()
+      
       listCoin.title = "Moedas"
-      
-      
-      let manager: AssetManagerProtocol = AssetManager()
-      
-      DataStore.trendingsDataStore.getImages()
-      
-      manager.requestTrendings(){
-        trendingViewModel in
-        DataStore.trendingsDataStore.trending = trendingViewModel
-        DispatchQueue.main.async {
-          listCoin.listCoinView?.tableView.reloadData()
-        }
-      }failureHandler: { error in
-        print("Erro")
-        DataStore.trendingsDataStore.trending  = AssetsViewModel()
-    }
-
-      let favoriteCoin = FavoritosViewController()
       favoriteCoin.title = "Favoritas"
+      
       self.setViewControllers([listCoin,favoriteCoin], animated: false)
+      
       guard let items = self.tabBar.items else {return}
       let images = ["dollarsign.circle", "star.circle"]
+      
       self.tabBar.barTintColor = .black
       for i in 0...items.count - 1 {
         if #available(iOS 15, *) {
