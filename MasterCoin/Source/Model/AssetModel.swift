@@ -12,7 +12,8 @@ struct AssetModel: Codable{
   let price_usd: Double?
   let id_icon: String?
   let volume_1hrs_usd: Double?
-  
+  let volume_1day_usd: Double?
+  let volume_1mth_usd: Double?
   
   init(){
     asset_id = ""
@@ -20,6 +21,8 @@ struct AssetModel: Codable{
     price_usd = 0
     id_icon = ""
     volume_1hrs_usd = 0
+    volume_1day_usd = 0
+    volume_1mth_usd = 0
   }
 }
 

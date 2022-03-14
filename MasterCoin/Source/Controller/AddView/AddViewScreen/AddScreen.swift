@@ -29,14 +29,14 @@ class AddScreen: UIView {
     var volumesNegociaveis = LabelDefault(title: "volumes negociados")
     var lastHour = LabelDefault(title: "última hora")
     var lastMonth = LabelDefault(title: "último mês")
-    var lastYear = LabelDefault(title: "último ano")
+    var lastDay = LabelDefault(title: "último dia")
     var nameCoin = LabelDefault(title: "BTC")
     
     //Numbers
     var coinValueLabel = LabelDefault(title: "$ 00,000.00")
     var lastHourCoin = LabelDefault(title: "$ 00,000.00")
     var lastMonthCoin = LabelDefault(title: "$ 00,000.00")
-    var lastYearCoin = LabelDefault(title: "$ 00,000.00")
+    var lastDayCoin = LabelDefault(title: "$ 00,000.00")
     
     
     
@@ -100,14 +100,14 @@ class AddScreen: UIView {
         nameCoin.font = UIFont.boldSystemFont(ofSize: 20)
         lastHour.font = UIFont.systemFont(ofSize: 17)
         lastMonth.font = UIFont.systemFont(ofSize: 17)
-        lastYear.font = UIFont.systemFont(ofSize: 17)
+        lastDay.font = UIFont.systemFont(ofSize: 17)
         
 
         //Numbers
         coinValueLabel.font = UIFont.systemFont(ofSize: 25)
         lastHourCoin.font = UIFont.systemFont(ofSize: 17)
         lastMonthCoin.font = UIFont.systemFont(ofSize: 17)
-        lastYearCoin.font = UIFont.systemFont(ofSize: 17)
+        lastDayCoin.font = UIFont.systemFont(ofSize: 17)
     }
     
     //MARK: - Função das Constraints
@@ -124,12 +124,12 @@ class AddScreen: UIView {
         //Datas View Preta
         self.addSubview(self.lastHour)
         self.addSubview(self.lastMonth)
-        self.addSubview(self.lastYear)
+        self.addSubview(self.lastDay)
         
         //Dinheiro View Preta
         self.addSubview(self.lastHourCoin)
         self.addSubview(self.lastMonthCoin)
-        self.addSubview(self.lastYearCoin)
+        self.addSubview(self.lastDayCoin)
 
     }
     
@@ -143,6 +143,11 @@ class AddScreen: UIView {
   
     func setLabels(assetModel: AssetModel){
       nameCoin.text = assetModel.asset_id
+      lastHourCoin.text = String(format:"%.2f",assetModel.volume_1hrs_usd ?? "")
+      lastDayCoin.text = String(format:"%.2f",assetModel.volume_1day_usd ?? "")
+      lastMonthCoin.text = String(format:"%.2f",assetModel.volume_1mth_usd ?? "")
+      coinValueLabel.text = String(format:"%.2f",assetModel.price_usd ?? "")
+      logoCoinImageView.load(assetId: assetModel.asset_id)
     }
     
     
@@ -158,6 +163,8 @@ class AddScreen: UIView {
             //Image Coin Constraint
             self.logoCoinImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
             self.logoCoinImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.logoCoinImageView.widthAnchor.constraint(equalToConstant: 50),
+            self.logoCoinImageView.heightAnchor.constraint(equalToConstant: 50),
             
             //Coin Value Constraint
             self.coinValueLabel.topAnchor.constraint(equalTo: self.logoCoinImageView.bottomAnchor,constant: -55),
@@ -189,8 +196,8 @@ class AddScreen: UIView {
             self.lastMonth.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             
             //Último ano
-            self.lastYear.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
-            self.lastYear.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            self.lastDay.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
+            self.lastDay.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
         
             //Última Hora Moeda/Dinheiro
             self.lastHourCoin.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 80),
@@ -201,8 +208,8 @@ class AddScreen: UIView {
             self.lastMonthCoin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
             //Último ano Moeda/Dinheiro
-            self.lastYearCoin.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
-            self.lastYearCoin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            self.lastDayCoin.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
+            self.lastDayCoin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
         ])
     }
