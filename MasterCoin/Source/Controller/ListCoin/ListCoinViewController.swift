@@ -10,7 +10,7 @@ import UIKit
 class ListCoinViewController: UIViewController {
 
   var listCoinView: ListCoinView?
-  
+  var onSelectedCoin: ((_ selectedCoin: AssetModel) -> Void)?
   
   override func loadView() {
     self.listCoinView = ListCoinView()
@@ -19,15 +19,11 @@ class ListCoinViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-      
-    //self.listCoin?.tableViewDelegates(delegate: self, dataSource: self)
-    //self.listCoin?.searchBarDelegate(delegate: self)
     self.navigationController?.isNavigationBarHidden = true
     navigationController?.navigationBar.barStyle = .black
-    listCoinView?.onVoltar = {
-
-        self.navigationController?.pushViewController(AddViewController(), animated: true)
-
+    
+    listCoinView?.onSelectedModel = {[weak self] selectedModel in
+          self?.onSelectedCoin?(selectedModel)
     }
   }
 

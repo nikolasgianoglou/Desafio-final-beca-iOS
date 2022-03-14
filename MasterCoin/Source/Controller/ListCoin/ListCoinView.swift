@@ -9,7 +9,8 @@ import UIKit
 
 class ListCoinView: UIView {
 
-    var onVoltar: (() -> Void)!
+  var onVoltar: (() -> Void)!
+  var onSelectedModel: ((_ selectedCoin: AssetModel) -> Void)?
   //MARK: - Components
   lazy var tableView: UITableView = {
     let tableView = UITableView()
@@ -125,7 +126,8 @@ extension ListCoinView: UITableViewDataSource{
 
 extension ListCoinView: UITableViewDelegate{
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      self.onVoltar?()
+    let selectedCoin = DataStore.trendingsDataStore.trending.asset[indexPath.row]
+    onSelectedModel?(selectedCoin)
   }
   
 }

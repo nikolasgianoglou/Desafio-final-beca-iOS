@@ -140,6 +140,10 @@ class AddScreen: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+  
+    func setLabels(assetModel: AssetModel){
+      nameCoin.text = assetModel.asset_id
+    }
     
     
     //MARK: - Constraint

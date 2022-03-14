@@ -19,7 +19,7 @@ struct Constants{
   
   static let tipoAmbiente: TipoAmbiente = TipoAmbiente.producao
   
-  static let apiKey = "apikey=F66BC9E3-1683-4988-BBCD-D684ECDDD6BE"
+  static let apiKey = "apikey=8ABEFB2F-2FF9-4D3A-A935-B80868FE7021"
   static let apiUrlImage55 = "https://rest.coinapi.io/v1/assets/icons/55/"
   
   struct ApiError {

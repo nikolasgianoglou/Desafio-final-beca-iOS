@@ -10,6 +10,7 @@ import UIKit
 class TabBarViewController: UITabBarController {
     let listCoin = ListCoinViewController()
     let favoriteCoin = FavoritosViewController()
+    var onSelectedCoin: ((_ selectedCoin: AssetModel) -> Void)?
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       self.navigationController?.isNavigationBarHidden = true
@@ -21,6 +22,10 @@ class TabBarViewController: UITabBarController {
       
       listCoin.title = "Moedas"
       favoriteCoin.title = "Favoritas"
+      
+      listCoin.onSelectedCoin = {[weak self] selectedModel in
+            self?.onSelectedCoin?(selectedModel)
+      }
       
       self.setViewControllers([listCoin,favoriteCoin], animated: false)
       
