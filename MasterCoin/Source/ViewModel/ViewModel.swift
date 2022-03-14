@@ -14,3 +14,18 @@ class ViewModel<T>{
     self.model = model
   }
 }
+
+class IconViewModel: ViewModel<IconModel>{
+  var icons: [IconModel]
+  
+  init(){
+    self.icons = [IconModel]()
+    super.init(model: [IconModel]())
+  }
+  
+  override init(model: [IconModel]){
+    self.icons = model
+    super.init(model: model)
+  }
+  
+}
