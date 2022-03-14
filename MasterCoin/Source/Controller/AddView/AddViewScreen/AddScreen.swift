@@ -28,15 +28,16 @@ class AddScreen: UIView {
     //Letters
     var volumesNegociaveis = LabelDefault(title: "volumes negociados")
     var lastHour = LabelDefault(title: "última hora")
-    var lastMonth = LabelDefault(title: "último mês")
     var lastDay = LabelDefault(title: "último dia")
+    var lastMonth = LabelDefault(title: "último mes")
     var nameCoin = LabelDefault(title: "BTC")
     
     //Numbers
     var coinValueLabel = LabelDefault(title: "$ 00,000.00")
     var lastHourCoin = LabelDefault(title: "$ 00,000.00")
-    var lastMonthCoin = LabelDefault(title: "$ 00,000.00")
     var lastDayCoin = LabelDefault(title: "$ 00,000.00")
+    var lastMonthCoin = LabelDefault(title: "$ 00,000.00")
+    
     
     
     
@@ -99,15 +100,15 @@ class AddScreen: UIView {
         volumesNegociaveis.font = UIFont.systemFont(ofSize: 25)
         nameCoin.font = UIFont.boldSystemFont(ofSize: 20)
         lastHour.font = UIFont.systemFont(ofSize: 17)
-        lastMonth.font = UIFont.systemFont(ofSize: 17)
+        lastDay.font = UIFont.systemFont(ofSize: 17)
         lastDay.font = UIFont.systemFont(ofSize: 17)
         
 
         //Numbers
         coinValueLabel.font = UIFont.systemFont(ofSize: 25)
         lastHourCoin.font = UIFont.systemFont(ofSize: 17)
-        lastMonthCoin.font = UIFont.systemFont(ofSize: 17)
         lastDayCoin.font = UIFont.systemFont(ofSize: 17)
+        lastMonthCoin.font = UIFont.systemFont(ofSize: 17)
     }
     
     //MARK: - Função das Constraints
@@ -123,13 +124,14 @@ class AddScreen: UIView {
         
         //Datas View Preta
         self.addSubview(self.lastHour)
-        self.addSubview(self.lastMonth)
         self.addSubview(self.lastDay)
+        self.addSubview(self.lastMonth)
         
         //Dinheiro View Preta
         self.addSubview(self.lastHourCoin)
-        self.addSubview(self.lastMonthCoin)
         self.addSubview(self.lastDayCoin)
+        self.addSubview(self.lastMonthCoin)
+        
 
     }
     
@@ -192,24 +194,24 @@ class AddScreen: UIView {
             self.lastHour.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             
             //Último mês
-            self.lastMonth.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 130),
-            self.lastMonth.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            self.lastDay.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 130),
+            self.lastDay.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             
             //Último ano
-            self.lastDay.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
-            self.lastDay.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            self.lastMonth.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
+            self.lastMonth.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
         
             //Última Hora Moeda/Dinheiro
             self.lastHourCoin.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 80),
             self.lastHourCoin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
-            //Último mês Moeda/Dinheiro
-            self.lastMonthCoin.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 130),
-            self.lastMonthCoin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            
-            //Último ano Moeda/Dinheiro
-            self.lastDayCoin.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
+            //Último dia Moeda/Dinheiro
+            self.lastDayCoin.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 130),
             self.lastDayCoin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            
+            //Último mes Moeda/Dinheiro
+            self.lastMonthCoin.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
+            self.lastMonthCoin.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
         ])
     }
