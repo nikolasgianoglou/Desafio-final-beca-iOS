@@ -116,6 +116,7 @@ extension ListCoinView: UITableViewDataSource{
     let priceString = NumberFormatter.numberFormatter.string(from: NSNumber(value: selectedAsset.price_usd ?? 0))
     cell?.valueLabel.text = priceString
     cell?.abreviationLabel.text = selectedAsset.asset_id
+    cell?.coinImageView.load(assetId: assetViewModel[indexPath.row].asset_id)
     return cell ?? ListCoinTableViewCell()
   }
   

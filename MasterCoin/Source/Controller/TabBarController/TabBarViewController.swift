@@ -23,6 +23,8 @@ class TabBarViewController: UITabBarController {
       
       let manager: AssetManagerProtocol = AssetManager()
       
+      DataStore.trendingsDataStore.getImages()
+      
       manager.requestTrendings(){
         trendingViewModel in
         DataStore.trendingsDataStore.trending = trendingViewModel

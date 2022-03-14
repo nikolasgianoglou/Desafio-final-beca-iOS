@@ -7,7 +7,7 @@
 
 import Foundation
 struct AssetModel: Codable{
-  let asset_id: String?
+  let asset_id: String
   let name: String?
   let price_usd: Double?
   let id_icon: String?
@@ -23,9 +23,9 @@ struct AssetModel: Codable{
   }
 }
 
-struct Icon: Codable{
-  let asset_id: String
-  let url: String
+struct IconModel: Decodable{
+  let asset_id: String?
+  let url: String?
   
   init(){
     asset_id = ""
