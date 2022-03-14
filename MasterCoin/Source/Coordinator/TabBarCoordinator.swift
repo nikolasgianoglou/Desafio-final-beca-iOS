@@ -32,6 +32,17 @@ class TabBarCoordinator: Coordinator{
       DataStore.trendingsDataStore.trending  = AssetsViewModel()
     }
     
+    viewController.onSelectedCoin = {model in
+      self.goToAddView(model: model)
+    }
     self.navigationController.pushViewController(viewController, animated: true)
+  }
+  
+  
+  private func goToAddView(model: AssetModel?){
+    if let viewModel = model{
+      let coordinator = AddViewCoordinator(navigationController: self.navigationController,model: viewModel)
+        coordinator.start()
+    }
   }
 }

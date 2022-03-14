@@ -41,7 +41,7 @@ class AssetsDataStore{
   }
   
   func getAllIcons(completion: @escaping (Result<[IconModel], Error>) -> Void){
-    guard let url = URL(string: "https://rest.coinapi.io/v1/assets/icons/55/?apikey=F66BC9E3-1683-4988-BBCD-D684ECDDD6BE") else { return }
+    guard let url = URL(string: "https://rest.coinapi.io/v1/assets/icons/55/?apikey=3AF89ABC-365F-4966-BA01-6689AAD5F437") else { return }
     let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
       guard let data = data, error == nil else { return }
       

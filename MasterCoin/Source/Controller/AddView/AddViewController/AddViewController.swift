@@ -10,15 +10,17 @@ import UIKit
 class AddViewController: UIViewController {
     
     
-    var addscreen: AddScreen?
+  var addscreen: AddScreen = {
+    let view = AddScreen()
+    return view
+  }()
     override func loadView() {
-        self.addscreen = AddScreen()
         self.view = self.addscreen
     }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.addscreen?.delegate(delegate: self)
+    self.addscreen.delegate(delegate: self)
 
   }
     

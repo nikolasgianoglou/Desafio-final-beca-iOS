@@ -23,7 +23,7 @@ class AssetManager: BaseManager, AssetManagerProtocol{
   func requestTrendings(sucessHandler: @escaping ((AssetsViewModel) -> Void), failureHandler: @escaping ApiProviderFailureHandler) {
     let parameters: [AnyHashable: Any] = [Constants.ParametersKeys.method: Constants.HTTPMethod.get]
     
-    let to = "https://rest-sandbox.coinapi.io/v1/assets/?apikey=F66BC9E3-1683-4988-BBCD-D684ECDDD6BE"
+    let to = "https://rest-sandbox.coinapi.io/v1/assets/?apikey=3AF89ABC-365F-4966-BA01-6689AAD5F437"
     
     self.apiProvider.sendRequest(to: to,
                                  with: parameters,
