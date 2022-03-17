@@ -34,6 +34,6 @@ class AddViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.backItem?.title = "Voltar"
+        self.navigationController?.navigationBar.tintColor = .white
     }
-
 }

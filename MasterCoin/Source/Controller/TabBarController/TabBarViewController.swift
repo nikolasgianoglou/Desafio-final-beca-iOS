@@ -20,10 +20,9 @@ class TabBarViewController: UITabBarController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     listCoin.title = "Moedas"
     favoriteCoin.title = "Favoritas"
-    
+    self.tabBar.tintColor = UIColor.white
     listCoin.onSelectedCoin = {[weak self] selectedModel in
           self?.onSelectedCoin?(selectedModel)
     }
@@ -38,7 +37,6 @@ class TabBarViewController: UITabBarController {
       if #available(iOS 15, *) {
         items[i].image = UIImage(systemName: images[i])
              }
-      
     }
   }
 }
