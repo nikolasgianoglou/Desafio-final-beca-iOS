@@ -7,22 +7,17 @@
 
 import UIKit
 
-protocol AddScreenProtocol:class{
-    func actionAddButton()
-}
+//protocol AddScreenProtocol:class{
+//    func actionAddButton()
+//}
 
 
 class AddScreen: UIView {
     
     
-    weak var delegate: AddScreenProtocol?
-    
-    func delegate(delegate:AddScreenProtocol?){
-        self.delegate = delegate
-    }
-    
+  var assetModel: AssetModel?
   
-    
+    var addOrRemoveFavoriteCoin: (() -> Void)?
     //MARK: - Labels
 
     //Letters
@@ -66,7 +61,6 @@ class AddScreen: UIView {
         button.layer.cornerRadius = 7.5
         button.backgroundColor = UIColor(red: 141/255, green: 149/255, blue: 98/255, alpha: 1.0)
         button.addTarget(self, action: #selector(self.onClickAddButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -131,25 +125,36 @@ class AddScreen: UIView {
         self.addSubview(self.lastHourCoin)
         self.addSubview(self.lastDayCoin)
         self.addSubview(self.lastMonthCoin)
-        
-
     }
     
     @objc private func onClickAddButton(){
-        self.delegate?.actionAddButton()
+      if addButton.titleLabel?.text == "Adicionar"{
+        assetModel?.isFavorite = true
+        addButton.setTitle("Remover", for: .normal)
+      }else if addButton.titleLabel?.text == "Remover"{
+        assetModel?.isFavorite = false
+        addButton.setTitle("Adicionar", for: .normal)
+      }
+      addOrRemoveFavoriteCoin?()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
   
     func setLabels(assetModel: AssetModel){
       nameCoin.text = assetModel.asset_id
-      lastHourCoin.text = String(format:"%.2f",assetModel.volume_1hrs_usd ?? "")
-      lastDayCoin.text = String(format:"%.2f",assetModel.volume_1day_usd ?? "")
-      lastMonthCoin.text = String(format:"%.2f",assetModel.volume_1mth_usd ?? "")
-      coinValueLabel.text = String(format:"%.2f",assetModel.price_usd ?? "")
+      lastHourCoin.text = NumberFormatter.numberFormatter.string(from: NSNumber(value: assetModel.volume_1hrs_usd ?? 0))
+      lastDayCoin.text = NumberFormatter.numberFormatter.string(from: NSNumber(value: assetModel.volume_1day_usd ?? 0))
+      lastMonthCoin.text = NumberFormatter.numberFormatter.string(from: NSNumber(value: assetModel.volume_1mth_usd ?? 0))
+      coinValueLabel.text = NumberFormatter.numberFormatter.string(from: NSNumber(value: assetModel.price_usd ?? 0))
       logoCoinImageView.load(assetId: assetModel.asset_id)
+      
+      if assetModel.isFavorite == true{
+        addButton.setTitle("Remover", for: .normal)
+      }else {
+        addButton.setTitle("Adicionar", for: .normal)
+      }
     }
     
     
@@ -193,11 +198,11 @@ class AddScreen: UIView {
             self.lastHour.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 80),
             self.lastHour.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             
-            //Último mês
+            //Último dia
             self.lastDay.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 130),
             self.lastDay.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             
-            //Último ano
+            //Último mes
             self.lastMonth.topAnchor.constraint(equalTo: self.listView.topAnchor, constant: 180),
             self.lastMonth.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
         

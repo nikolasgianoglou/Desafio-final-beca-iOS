@@ -9,9 +9,10 @@ import Foundation
 import UIKit
 
 class AddViewCoordinator: Coordinator{
-
+  
   var navigationController: UINavigationController
-  let assetModel: AssetModel
+  var assetModel: AssetModel
+  var coordinatorAdd: ((_ viewModel: inout AssetModel) -> Void)?
   
   init(navigationController: UINavigationController, model: AssetModel){
     self.navigationController = navigationController
@@ -20,7 +21,13 @@ class AddViewCoordinator: Coordinator{
   
   func start() {
     let viewController = AddViewController()
+    
     viewController.addscreen.setLabels(assetModel: assetModel)
+    viewController.selectedAsset = {
+      self.coordinatorAdd?(&self.assetModel)
+
+      }
+    
     self.navigationController.pushViewController(viewController, animated: true)
   }
 }

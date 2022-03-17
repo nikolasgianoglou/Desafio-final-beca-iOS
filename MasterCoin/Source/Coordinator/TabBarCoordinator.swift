@@ -10,13 +10,13 @@ import UIKit
 
 class TabBarCoordinator: Coordinator{
   var navigationController: UINavigationController
-  
+  let viewController = TabBarViewController()
   init(navigationController: UINavigationController){
     self.navigationController = navigationController
   }
   
   func start() {
-    let viewController = TabBarViewController()
+    
     let manager: AssetManagerProtocol = AssetManager()
     
     DataStore.trendingsDataStore.getImages()
@@ -25,7 +25,7 @@ class TabBarCoordinator: Coordinator{
       trendingViewModel in
       DataStore.trendingsDataStore.trending = trendingViewModel
       DispatchQueue.main.async {
-        viewController.listCoin.listCoinView?.tableView.reloadData()
+        self.viewController.listCoin.listCoinView?.tableView.reloadData()
       }
     }failureHandler: { error in
       print("Erro")
@@ -36,13 +36,31 @@ class TabBarCoordinator: Coordinator{
       self.goToAddView(model: model)
     }
     self.navigationController.pushViewController(viewController, animated: true)
+    
+    
   }
   
   
   private func goToAddView(model: AssetModel?){
-    if let viewModel = model{
+    if var viewModel = model{
+      
       let coordinator = AddViewCoordinator(navigationController: self.navigationController,model: viewModel)
-        coordinator.start()
+      coordinator.coordinatorAdd = { model in
+          if !self.viewController.favoriteCoin.modelTest.contains(where: {$0.asset_id == model.asset_id}){
+            self.viewController.favoriteCoin.modelTest.append(model)
+            model.isFavorite = true
+          }else{
+            model.isFavorite = false
+            self.viewController.favoriteCoin.modelTest = self.viewController.favoriteCoin.modelTest.filter { $0.asset_id != model.asset_id}
+            }
+            
+            
+          }
+        
+      coordinator.start()
+      }
+        
     }
-  }
+    
 }
+

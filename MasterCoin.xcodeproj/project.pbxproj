@@ -12,9 +12,6 @@
 		BE3E45B027DA5C0B00633EBA /* FavoritosScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */; };
 		BE3E45B227DA5C5B00633EBA /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */; };
 		BE3E45B527DA5F6200633EBA /* FavoritosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */; };
-		BE3E45B727DA5FB700633EBA /* FavoritosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B627DA5FB700633EBA /* FavoritosView.swift */; };
-		BEFABDAD27DB9A900089FFE0 /* RemoveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFABDAC27DB9A900089FFE0 /* RemoveScreen.swift */; };
-		BEFABDAF27DB9AB90089FFE0 /* RemoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFABDAE27DB9AB90089FFE0 /* RemoveViewController.swift */; };
 		F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */; };
 		F848011B27DF689E00E78896 /* ImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F848011A27DF689E00E78896 /* ImageView+.swift */; };
 		F848011F27DF771400E78896 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F848011E27DF771400E78896 /* TabBarCoordinator.swift */; };
@@ -73,9 +70,6 @@
 		BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosScreen.swift; sourceTree = "<group>"; };
 		BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosCollectionViewCell.swift; sourceTree = "<group>"; };
-		BE3E45B627DA5FB700633EBA /* FavoritosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosView.swift; sourceTree = "<group>"; };
-		BEFABDAC27DB9A900089FFE0 /* RemoveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveScreen.swift; sourceTree = "<group>"; };
-		BEFABDAE27DB9AB90089FFE0 /* RemoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveViewController.swift; sourceTree = "<group>"; };
 		F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F848011A27DF689E00E78896 /* ImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+.swift"; sourceTree = "<group>"; };
 		F848011E27DF771400E78896 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -168,9 +162,8 @@
 		BE3E459727D92D8400633EBA /* FavoritosViewScreen */ = {
 			isa = PBXGroup;
 			children = (
-				BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */,
 				BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */,
-				BE3E45B627DA5FB700633EBA /* FavoritosView.swift */,
+				BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */,
 			);
 			path = FavoritosViewScreen;
 			sourceTree = "<group>";
@@ -181,31 +174,6 @@
 				BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */,
 			);
 			path = FavoritosViewController;
-			sourceTree = "<group>";
-		};
-		BEFABDA927DB9A240089FFE0 /* RemoveView */ = {
-			isa = PBXGroup;
-			children = (
-				BEFABDAB27DB9A450089FFE0 /* RemoveViewController */,
-				BEFABDAA27DB9A310089FFE0 /* RemoveViewScreen */,
-			);
-			path = RemoveView;
-			sourceTree = "<group>";
-		};
-		BEFABDAA27DB9A310089FFE0 /* RemoveViewScreen */ = {
-			isa = PBXGroup;
-			children = (
-				BEFABDAE27DB9AB90089FFE0 /* RemoveViewController.swift */,
-			);
-			path = RemoveViewScreen;
-			sourceTree = "<group>";
-		};
-		BEFABDAB27DB9A450089FFE0 /* RemoveViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BEFABDAC27DB9A900089FFE0 /* RemoveScreen.swift */,
-			);
-			path = RemoveViewController;
 			sourceTree = "<group>";
 		};
 		F802718E27D8F2B700CFC6C0 /* FavoriteCoin */ = {
@@ -441,7 +409,6 @@
 				BE1EA34B27D6861C00E4A9D5 /* AddView */,
 				F802718E27D8F2B700CFC6C0 /* FavoriteCoin */,
 				F85BC27C27D7A27200D60FF7 /* ListCoin */,
-				BEFABDA927DB9A240089FFE0 /* RemoveView */,
 				F802719127D8F2EE00CFC6C0 /* TabBarController */,
 			);
 			path = Controller;
@@ -581,7 +548,6 @@
 				BE3E45B027DA5C0B00633EBA /* FavoritosScreen.swift in Sources */,
 				F8C9A3FE27DBC745002682A6 /* Data+.swift in Sources */,
 				F848011F27DF771400E78896 /* TabBarCoordinator.swift in Sources */,
-				BEFABDAF27DB9AB90089FFE0 /* RemoveViewController.swift in Sources */,
 				F8B942CF27D640FB00DC63A2 /* ApiProvider.swift in Sources */,
 				F8B942D327D6411200DC63A2 /* ViewModel.swift in Sources */,
 				F8B942C727D640D400DC63A2 /* Bundle+.swift in Sources */,
@@ -594,13 +560,11 @@
 				F8B942C527D640C900DC63A2 /* DebugLogger.swift in Sources */,
 				F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */,
 				F8C9A40027DBC7C3002682A6 /* AssetsViewModel.swift in Sources */,
-				BEFABDAD27DB9A900089FFE0 /* RemoveScreen.swift in Sources */,
 				F8B942CD27D640F200DC63A2 /* LabelDefault.swift in Sources */,
 				F85388AA27DCF8CC001EC011 /* NumberFormatter+.swift in Sources */,
 				BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,
 				BE1EA35327D6877300E4A9D5 /* AddViewController.swift in Sources */,
-				BE3E45B727DA5FB700633EBA /* FavoritosView.swift in Sources */,
 				F85BC27E27D7A2BC00D60FF7 /* ListCoinView.swift in Sources */,
 				BE3E45B527DA5F6200633EBA /* FavoritosCollectionViewCell.swift in Sources */,
 				F8C9A3F427DBC5DF002682A6 /* AssetManager.swift in Sources */,

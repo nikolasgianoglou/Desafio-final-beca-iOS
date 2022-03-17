@@ -9,53 +9,53 @@ import UIKit
 
 class FavoritosViewController: UIViewController {
     
-    var label = UIView()
+  //var label = UIView()
+  var modelTest: [AssetModel] = [AssetModel]()
+  var favoritosscreen: FavoritosScreen = {
+    let teste = FavoritosScreen(frame:.zero)
+    teste.backgroundColor = .white
+    return teste
+  }()
+  
+  
+  override func loadView() {
+    self.view = self.favoritosscreen
+  }
 
-    
-    var favoritosscreen: FavoritosScreen!
-    override func loadView() {
-       self.favoritosscreen = FavoritosScreen()
-        self.view = self.favoritosscreen
-            
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configuraConstraints()
-        self.favoritosscreen?.collectionView.delegate = self
-        self.favoritosscreen?.collectionView.dataSource = self
+override func viewWillAppear(_ animated: Bool) {
+  super.viewWillAppear(animated)
+  for a in modelTest{
+    print(a.name)
+  }
+}
+  
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      self.favoritosscreen.collectionView.delegate = self
+      self.favoritosscreen.collectionView.dataSource = self
      
-        //self.setTitle("Moedas Digitais", subtitle: date.toString(format: "dd, MMM yyyy"))
-    }
-    
-    func configuraConstraints(){
-        favoritosscreen?.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-        
-            self.favoritosscreen.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.favoritosscreen.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            self.favoritosscreen.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.favoritosscreen.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            
-
-        ])
-    }
+  }
 }
 
-extension FavoritosViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
+extension FavoritosViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: favoritosscreen.collectionView.frame.width/2.5, height: favoritosscreen.collectionView.frame.width/2)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return modelTest.count
+  }
+  
+  
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = favoritosscreen.collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritosCollectionViewCell", for: indexPath) as! FavoritosCollectionViewCell
+    cell.setUpLabels(with: modelTest[indexPath.row])
+    favoritosscreen.collectionView.reloadData()
+    return cell
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoritosCollectionViewCell.identifier, for: indexPath) as? FavoritosCollectionViewCell
-        
-        return cell!
-    }
-    
-}
-
-extension FavoritosViewController: UICollectionViewDelegate {
-    
+  }
+  
+  
 }
 
