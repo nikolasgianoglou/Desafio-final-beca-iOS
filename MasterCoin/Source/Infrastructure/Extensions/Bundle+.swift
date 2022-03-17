@@ -8,6 +8,8 @@
 import Foundation
 
 extension Bundle {
+    
+    
     static var current: Bundle {
         class DummyClass {
             init() {

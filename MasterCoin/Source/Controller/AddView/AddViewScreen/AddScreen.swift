@@ -24,7 +24,7 @@ class AddScreen: UIView {
     var volumesNegociaveis = LabelDefault(title: "volumes negociados")
     var lastHour = LabelDefault(title: "última hora")
     var lastDay = LabelDefault(title: "último dia")
-    var lastMonth = LabelDefault(title: "último mes")
+    var lastMonth = LabelDefault(title: "último mês")
     var nameCoin = LabelDefault(title: "BTC")
     
     //Numbers
@@ -95,7 +95,7 @@ class AddScreen: UIView {
         nameCoin.font = UIFont.boldSystemFont(ofSize: 20)
         lastHour.font = UIFont.systemFont(ofSize: 17)
         lastDay.font = UIFont.systemFont(ofSize: 17)
-        lastDay.font = UIFont.systemFont(ofSize: 17)
+        lastMonth.font = UIFont.systemFont(ofSize: 17)
         
 
         //Numbers
