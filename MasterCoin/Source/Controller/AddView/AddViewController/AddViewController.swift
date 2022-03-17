@@ -10,6 +10,8 @@ import UIKit
 class AddViewController: UIViewController {
     
     
+  var selectedAsset: (() -> Void)?
+  
   var addscreen: AddScreen = {
     let view = AddScreen()
     return view
@@ -17,26 +19,21 @@ class AddViewController: UIViewController {
     override func loadView() {
         self.view = self.addscreen
     }
+  
+  
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.addscreen.delegate(delegate: self)
+    //self.addscreen.delegate(delegate: self)
+    addscreen.addOrRemoveFavoriteCoin = {
+      self.selectedAsset?()
+      }
 
   }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.backItem?.title = "Voltar"
-        
-    }
-
-}
-
-extension AddViewController:AddScreenProtocol{
-    func actionAddButton() {
-        print("Adicionando moeda ao Favorito")
-        let vc: RemoveViewController = RemoveViewController()
-        self.navigationController?.pushViewController(vc, animated: false)
     }
 
 }

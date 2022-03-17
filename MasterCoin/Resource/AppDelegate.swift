@@ -25,12 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let coordinator = TabBarCoordinator(navigationController: navigationController)
     coordinator.start()
     
-//    let rootViewController = TabBarViewController()
-//    let navigationController = UINavigationController(rootViewController: rootViewController)
-//    self.window = UIWindow(frame: UIScreen.main.bounds)
-//    self.window?.rootViewController = navigationController
-//    self.window?.makeKeyAndVisible()
-    
     return true
   }
 

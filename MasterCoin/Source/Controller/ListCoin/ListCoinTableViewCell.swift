@@ -9,15 +9,13 @@ import UIKit
 
 class ListCoinTableViewCell: UITableViewCell {
 
+
   static let identifier: String = "ListCoinTableViewCell"
   
   //MARK: - Initializers
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     self.contentView.backgroundColor = UIColor(red: 26/255, green: 28/255, blue: 29/255, alpha: 1.0)
-    
-
-
     self.addSubview()
     configConstraints()
   }
@@ -39,7 +37,11 @@ class ListCoinTableViewCell: UITableViewCell {
     lazy var starImage: UIImageView = {
       let image = UIImageView()
       image.translatesAutoresizingMaskIntoConstraints = false
-      image.backgroundColor = .red
+      if #available(iOS 13.0, *) {
+        image.image = UIImage(systemName: "star.fill")
+      } else {
+      }
+      //image.backgroundColor = .red
       image.contentMode = .scaleAspectFit
       image.isHidden = true
       return image
@@ -68,6 +70,15 @@ class ListCoinTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+  
+  func configureCell(with model: AssetModel){
+    nameLabel.text = model.name
+    let priceString = NumberFormatter.numberFormatter.string(from: NSNumber(value: model.price_usd ?? 0))
+    valueLabel.text = priceString
+    abreviationLabel.text = model.asset_id
+    coinImageView.load(assetId: model.asset_id)
+    starImage.isHidden = !(model.isFavorite ?? false)
+  }
   
   //MARK: - Constraints
   private func configConstraints(){

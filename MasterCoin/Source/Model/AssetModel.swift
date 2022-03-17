@@ -14,6 +14,7 @@ struct AssetModel: Codable{
   let volume_1hrs_usd: Double?
   let volume_1day_usd: Double?
   let volume_1mth_usd: Double?
+  var isFavorite: Bool?
   
   init(){
     asset_id = ""
@@ -23,6 +24,7 @@ struct AssetModel: Codable{
     volume_1hrs_usd = 0
     volume_1day_usd = 0
     volume_1mth_usd = 0
+    isFavorite = false
   }
 }
 

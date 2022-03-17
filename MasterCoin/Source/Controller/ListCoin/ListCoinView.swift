@@ -9,7 +9,8 @@ import UIKit
 
 class ListCoinView: UIView {
 
-  var onVoltar: (() -> Void)!
+  let date = Date()
+  
   var onSelectedModel: ((_ selectedCoin: AssetModel) -> Void)?
   //MARK: - Components
   lazy var tableView: UITableView = {
@@ -44,13 +45,18 @@ class ListCoinView: UIView {
   }()
     
   let titleLabel = LabelDefault(title: "Moeda Digital")
-  let subtitleLabel = LabelDefault(title: "DD MM AAAA")
+  let subtitleLabel = LabelDefault(title: "Teste")
   
   //MARK: - Initializers
   override init (frame: CGRect){
     super.init(frame: frame)
     self.addSubview()
     setUpConstraints()
+    
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd.MM.YYYY"
+    let dateText = dateFormatter.string(from: date)
+    subtitleLabel.text = dateText
   }
   
   required init?(coder: NSCoder) {
@@ -111,17 +117,10 @@ extension ListCoinView: UITableViewDataSource{
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: ListCoinTableViewCell? = tableView.dequeueReusableCell(withIdentifier: ListCoinTableViewCell.identifier, for: indexPath) as? ListCoinTableViewCell
     let assetViewModel = DataStore.trendingsDataStore.trending.asset
-    
     let selectedAsset = assetViewModel[indexPath.row]
-    cell?.nameLabel.text = selectedAsset.name
-    let priceString = NumberFormatter.numberFormatter.string(from: NSNumber(value: selectedAsset.price_usd ?? 0))
-    cell?.valueLabel.text = priceString
-    cell?.abreviationLabel.text = selectedAsset.asset_id
-    cell?.coinImageView.load(assetId: assetViewModel[indexPath.row].asset_id)
+    cell?.configureCell(with: selectedAsset)
     return cell ?? ListCoinTableViewCell()
   }
-  
-  
 }
 
 extension ListCoinView: UITableViewDelegate{
