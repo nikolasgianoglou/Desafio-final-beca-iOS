@@ -20,7 +20,7 @@
 "nameCoin" =  "BTC";
 
 //Numbers
-"coinValueLabel" =  "$ 00,000.00"
-"lastHourCoin" = "$ 00,000.000"
-"lastDayCoin" =  "$ 00,000.00"
-"lastMonthCoin" = "$ 00,000.00"
+"coinValueLabel" =  "$ 00,000.00";
+"lastHourCoin" = "$ 00,000.000";
+"lastDayCoin" =  "$ 00,000.00";
+"lastMonthCoin" = "$ 00,000.00";

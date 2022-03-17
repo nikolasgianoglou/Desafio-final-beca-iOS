@@ -65,6 +65,16 @@ public static let shared = ApiProvider()
         } else {
             throw ApiError.invalidResponse(response.statusCode)
         }
+    case 400:
+      throw ApiError.badRequest(response.statusCode)
+    case 401:
+      throw ApiError.unauthorized(response.statusCode)
+    case 403:
+      throw ApiError.forbidden(response.statusCode)
+    case 429:
+      throw ApiError.tooManyRequests(response.statusCode)
+    case 550:
+      throw ApiError.NoData(response.statusCode)
     default:
         throw ApiError.unknownError(response.statusCode)
     }
@@ -75,8 +85,16 @@ public static let shared = ApiProvider()
   private func handlerError(error: Error, statuscode: Int) throws  {
       if let errorCode = ApiErrorCode(rawValue: error._code) {
           switch errorCode {
-          case .serverErrorStatusCode:
-              throw KnownApiFailures.serverErrorStatusCode(error)
+          case .badRequest:
+              throw KnownApiFailures.thereIsSomethingWrongWithYourRequest(error)
+          case .unauthorized:
+            throw KnownApiFailures.youAPIKeyIsWrong(error)
+          case .forbidden:
+            throw KnownApiFailures.yourAPIKeyDoesntHaveEnouPrivilegesToAccessThisResource(error)
+          case .tooManyRequests:
+            throw KnownApiFailures.youHaveExceededYouAPIKEYRateLImits(error)
+          case .NoData:
+            throw KnownApiFailures.youRequestedSpecificSingleItemWeDontHaveAtThis(error)
           }
       }
       throw ApiError.failure(error, statuscode)

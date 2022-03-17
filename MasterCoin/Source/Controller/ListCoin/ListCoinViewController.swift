@@ -16,6 +16,10 @@ class ListCoinViewController: UIViewController {
     self.listCoinView = ListCoinView()
     self.view = self.listCoinView
   }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.listCoinView?.searchBar.resignFirstResponder()
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
