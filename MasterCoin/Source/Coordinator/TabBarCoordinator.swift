@@ -24,6 +24,7 @@ class TabBarCoordinator: Coordinator{
     manager.requestTrendings(){
       trendingViewModel in
       DataStore.trendingsDataStore.trending = trendingViewModel
+      self.viewController.listCoin.listCoinView?.assetViewModel = DataStore.trendingsDataStore.trending.asset
       DispatchQueue.main.async {
         self.viewController.listCoin.listCoinView?.tableView.reloadData()
       }

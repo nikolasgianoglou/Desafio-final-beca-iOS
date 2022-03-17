@@ -8,9 +8,13 @@
 import UIKit
 
 class ListCoinView: UIView {
-
-  let date = Date()
   
+  var assetViewModel: [AssetModel]?
+  var data: [AssetModel]?
+  var filteredData = [AssetModel]()
+  var isSearch = false
+  
+  let date = Date()
   var onSelectedModel: ((_ selectedCoin: AssetModel) -> Void)?
   //MARK: - Components
   lazy var tableView: UITableView = {
@@ -57,6 +61,7 @@ class ListCoinView: UIView {
     dateFormatter.dateFormat = "dd.MM.YYYY"
     let dateText = dateFormatter.string(from: date)
     subtitleLabel.text = dateText
+    
   }
   
   required init?(coder: NSCoder) {
@@ -69,8 +74,12 @@ class ListCoinView: UIView {
     self.tableView.dataSource = dataSource
   }
 
-  public func searchBarDelegate(delegate: UISearchBarDelegate){
-    searchBar.delegate = delegate
+//  public func searchBarDelegate(delegate: UISearchBarDelegate){
+//    searchBar.delegate = delegate
+//  }
+  
+  func loadData() -> [AssetModel]{
+    return DataStore.trendingsDataStore.trending.asset
   }
   
   //MARK: - Configure View
@@ -111,26 +120,67 @@ class ListCoinView: UIView {
 
 extension ListCoinView: UITableViewDataSource{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return DataStore.trendingsDataStore.trending.asset.count
+    return isSearch ? self.filteredData.count : self.assetViewModel?.count ?? 0
+    
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: ListCoinTableViewCell? = tableView.dequeueReusableCell(withIdentifier: ListCoinTableViewCell.identifier, for: indexPath) as? ListCoinTableViewCell
-    let assetViewModel = DataStore.trendingsDataStore.trending.asset
-    let selectedAsset = assetViewModel[indexPath.row]
-    cell?.configureCell(with: selectedAsset)
+    
+    if isSearch{
+      cell?.configureCell(with: filteredData[indexPath.row])
+    }else{
+      let selectedAsset = assetViewModel?[indexPath.row]
+      cell?.configureCell(with: selectedAsset!)
+    }
+
     return cell ?? ListCoinTableViewCell()
   }
 }
 
 extension ListCoinView: UITableViewDelegate{
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectedCoin = DataStore.trendingsDataStore.trending.asset[indexPath.row]
-    onSelectedModel?(selectedCoin)
+    let selectedCoin = assetViewModel?[indexPath.row]
+    onSelectedModel?(selectedCoin!)
   }
   
 }
 
 extension ListCoinView: UISearchBarDelegate{
-  
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+             isSearch = true
+      }
+         
+      func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+             searchBar.resignFirstResponder()
+             isSearch = false
+      }
+         
+      func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+             searchBar.resignFirstResponder()
+             isSearch = false
+      }
+         
+      func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+             searchBar.resignFirstResponder()
+             isSearch = false
+      }
+      func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+          if searchText.count == 0 {
+              isSearch = false
+              self.tableView.reloadData()
+          } else {
+            filteredData = DataStore.trendingsDataStore.trending.asset.filter({ (text) -> Bool in
+              let tmp: NSString = text.name as! NSString
+              let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+              return range.location != NSNotFound
+              })
+              if(filteredData.count == 0){
+                  isSearch = false
+              } else {
+                  isSearch = true
+              }
+              self.tableView.reloadData()
+          }
+      }
 }
