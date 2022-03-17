@@ -12,6 +12,10 @@
 		BE3E45B027DA5C0B00633EBA /* FavoritosScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */; };
 		BE3E45B227DA5C5B00633EBA /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */; };
 		BE3E45B527DA5F6200633EBA /* FavoritosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */; };
+		BE51F3B427E37208004F879F /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51F3B327E37208004F879F /* LocalizableStrings.swift */; };
+		BE51F3B627E37245004F879F /* AccessibilityLocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51F3B527E37245004F879F /* AccessibilityLocalizableStrings.swift */; };
+		BE51F3B927E3729C004F879F /* MasterCoinLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE51F3B827E3729C004F879F /* MasterCoinLocalizable.strings */; };
+		BE51F3BB27E372B8004F879F /* MasterCoinAccessibilityLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE51F3BA27E372B8004F879F /* MasterCoinAccessibilityLocalizable.strings */; };
 		F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */; };
 		F848011B27DF689E00E78896 /* ImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F848011A27DF689E00E78896 /* ImageView+.swift */; };
 		F848011F27DF771400E78896 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F848011E27DF771400E78896 /* TabBarCoordinator.swift */; };
@@ -70,6 +74,10 @@
 		BE3E45AF27DA5C0B00633EBA /* FavoritosScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosScreen.swift; sourceTree = "<group>"; };
 		BE3E45B127DA5C5B00633EBA /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		BE3E45B427DA5F6200633EBA /* FavoritosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE51F3B327E37208004F879F /* LocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
+		BE51F3B527E37245004F879F /* AccessibilityLocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLocalizableStrings.swift; sourceTree = "<group>"; };
+		BE51F3B827E3729C004F879F /* MasterCoinLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MasterCoinLocalizable.strings; sourceTree = "<group>"; };
+		BE51F3BA27E372B8004F879F /* MasterCoinAccessibilityLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MasterCoinAccessibilityLocalizable.strings; sourceTree = "<group>"; };
 		F802719227D8F2EE00CFC6C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F848011A27DF689E00E78896 /* ImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+.swift"; sourceTree = "<group>"; };
 		F848011E27DF771400E78896 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -176,6 +184,24 @@
 			path = FavoritosViewController;
 			sourceTree = "<group>";
 		};
+		BE51F3B127E37181004F879F /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				BE51F3B327E37208004F879F /* LocalizableStrings.swift */,
+				BE51F3B527E37245004F879F /* AccessibilityLocalizableStrings.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		BE51F3B727E37285004F879F /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				BE51F3B827E3729C004F879F /* MasterCoinLocalizable.strings */,
+				BE51F3BA27E372B8004F879F /* MasterCoinAccessibilityLocalizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		F802718E27D8F2B700CFC6C0 /* FavoriteCoin */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +279,7 @@
 		F8B942AB27D6357400DC63A2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BE51F3B727E37285004F879F /* Strings */,
 				F8B9427B27D62D2700DC63A2 /* AppDelegate.swift */,
 				F8B9428427D62D2900DC63A2 /* Assets.xcassets */,
 				F8B942AC27D6359700DC63A2 /* Storyboard */,
@@ -339,6 +366,7 @@
 		F8B942B427D6364700DC63A2 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				BE51F3B127E37181004F879F /* Localizable */,
 				F8B942B527D6367400DC63A2 /* Api */,
 				F8B942B627D6367B00DC63A2 /* Components */,
 				F8B942B727D6368800DC63A2 /* Constants */,
@@ -519,6 +547,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B9428827D62D2900DC63A2 /* LaunchScreen.storyboard in Resources */,
+				BE51F3BB27E372B8004F879F /* MasterCoinAccessibilityLocalizable.strings in Resources */,
+				BE51F3B927E3729C004F879F /* MasterCoinLocalizable.strings in Resources */,
 				F8B9428527D62D2900DC63A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,8 +589,10 @@
 				BE3E45B227DA5C5B00633EBA /* FavoritosViewController.swift in Sources */,
 				F8B942C527D640C900DC63A2 /* DebugLogger.swift in Sources */,
 				F802719327D8F2EE00CFC6C0 /* TabBarViewController.swift in Sources */,
+				BE51F3B427E37208004F879F /* LocalizableStrings.swift in Sources */,
 				F8C9A40027DBC7C3002682A6 /* AssetsViewModel.swift in Sources */,
 				F8B942CD27D640F200DC63A2 /* LabelDefault.swift in Sources */,
+				BE51F3B627E37245004F879F /* AccessibilityLocalizableStrings.swift in Sources */,
 				F85388AA27DCF8CC001EC011 /* NumberFormatter+.swift in Sources */,
 				BE1EA35127D6874A00E4A9D5 /* AddScreen.swift in Sources */,
 				F8B9427C27D62D2700DC63A2 /* AppDelegate.swift in Sources */,

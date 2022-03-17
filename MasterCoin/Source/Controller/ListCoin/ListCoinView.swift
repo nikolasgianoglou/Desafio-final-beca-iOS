@@ -44,7 +44,7 @@ class ListCoinView: UIView {
     return view
   }()
     
-  let titleLabel = LabelDefault(title: "Moeda Digital")
+  let titleLabel = LabelDefault(title: LocalizableStrings.titleLabel.localize())
   let subtitleLabel = LabelDefault(title: "Teste")
   
   //MARK: - Initializers
@@ -52,7 +52,9 @@ class ListCoinView: UIView {
     super.init(frame: frame)
     self.addSubview()
     setUpConstraints()
-    
+    setFields()
+    setAccessibility()
+      
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "dd.MM.YYYY"
     let dateText = dateFormatter.string(from: date)
@@ -82,6 +84,16 @@ class ListCoinView: UIView {
     self.addSubview(subtitleLabel)
   }
   
+    private func setFields(){
+        titleLabel.text = AccessibilityLocalizableStrings.titleLabel.localize()
+    }
+  
+    private func setAccessibility(){
+        
+        titleLabel.accessibilityLabel = String(format: AccessibilityLocalizableStrings.titleLabel.localize(), LabelDefault(title: LocalizableStrings.titleLabel.localize()))
+    }
+    
+    
   //MARK: - Constraints
   private func setUpConstraints(){
     NSLayoutConstraint.activate([
