@@ -28,11 +28,19 @@ class FavoritosCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+  
+  let image: UIImageView = {
+    let coinImage = UIImageView()
+    coinImage.translatesAutoresizingMaskIntoConstraints = false
+    coinImage.image = UIImage(named: "coin")
+    return coinImage
+  }()
     
   func addSubView(){
     self.contentView.addSubview(nameCoin)
     self.contentView.addSubview(abreviationCoin)
     self.contentView.addSubview(value)
+    self.contentView.addSubview(image)
     //self.contentView.addSubview(abreviationCoin)
     //self.contentView.addSubview(value)
   }
@@ -53,7 +61,12 @@ class FavoritosCollectionViewCell: UICollectionViewCell {
           self.abreviationCoin.centerXAnchor.constraint(equalTo: nameCoin.centerXAnchor),
           
           self.value.topAnchor.constraint(equalTo: abreviationCoin.bottomAnchor, constant: 10),
-          self.value.centerXAnchor.constraint(equalTo: abreviationCoin.centerXAnchor)
+          self.value.centerXAnchor.constraint(equalTo: abreviationCoin.centerXAnchor),
+          
+          self.image.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: -5),
+          self.image.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: 5),
+          self.image.widthAnchor.constraint(equalToConstant: 20),
+          self.image.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
 }

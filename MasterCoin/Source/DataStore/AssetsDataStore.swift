@@ -63,7 +63,7 @@ class AssetsDataStore{
       case.success(let model):
         self.icon.icons = model
       case .failure(_):
-        print("I am so dumb")
+        print("Error")
       }
     }
 

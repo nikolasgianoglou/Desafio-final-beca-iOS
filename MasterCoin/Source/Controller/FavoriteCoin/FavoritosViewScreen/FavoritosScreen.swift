@@ -30,7 +30,7 @@ class FavoritosScreen: UIView {
     return cv
     
   }()
-  
+    
   override init(frame: CGRect) {
       super.init(frame: frame)
       self.addSubview()
@@ -51,6 +51,7 @@ class FavoritosScreen: UIView {
     view.addSubview(titleLabel)
     view.addSubview(subtitleLabel)
     view.addSubview(collectionView)
+    
   }
   
   //MARK: - Constraints
@@ -77,9 +78,9 @@ class FavoritosScreen: UIView {
       subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
       subtitleLabel.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
       
-      collectionView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 20),
-      collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-      collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+      collectionView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 15),
+      collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
+      collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
       collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
       
       
