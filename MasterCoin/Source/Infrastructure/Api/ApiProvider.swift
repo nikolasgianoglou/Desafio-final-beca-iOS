@@ -65,16 +65,6 @@ public static let shared = ApiProvider()
         } else {
             throw ApiError.invalidResponse(response.statusCode)
         }
-    case 400:
-      throw ApiError.badRequest(response.statusCode)
-    case 401:
-      throw ApiError.unauthorized(response.statusCode)
-    case 403:
-      throw ApiError.forbidden(response.statusCode)
-    case 429:
-      throw ApiError.tooManyRequests(response.statusCode)
-    case 550:
-      throw ApiError.NoData(response.statusCode)
     default:
         throw ApiError.unknownError(response.statusCode)
     }
